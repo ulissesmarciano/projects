@@ -12,7 +12,7 @@ import {
 import { SidebarButton } from '../SidebarButton'
 import { SearchInput } from '../SearchInput'
 
-const Header = () => {
+const Header = ({pokemonFilter}) => {
   return (
     <div>
       <Container>
@@ -21,7 +21,7 @@ const Header = () => {
         </ButtonContainer>
         <CenterContainer>
           <SearchFormContainer>
-            <SearchInput />
+            <SearchInput pokemonFilter={pokemonFilter}/>
             <SidebarButton/>
           </SearchFormContainer>
           <DisplayTop />

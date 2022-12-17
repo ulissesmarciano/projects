@@ -4,11 +4,11 @@ import { SearchInputItem, InputContainer, IconContainer } from './styles'
 
 import { GoSearch } from 'react-icons/go'
 
-const SearchInput = ({leftIcon, name, ...rest}) => {
+const SearchInput = ({leftIcon, name, pokemonFilter, ...rest}) => {
   return (
   <InputContainer>
     <IconContainer><GoSearch/></IconContainer>
-    <SearchInputItem type="text" placeholder="Busca por Nome ou Numero" leftIcon={<GoSearch/>} />
+    <SearchInputItem onChange={(e) => pokemonFilter(e.target.value)} type="text" placeholder="Busca por Nome ou Numero" leftIcon={<GoSearch/>} />
   </InputContainer>)
 }
 
