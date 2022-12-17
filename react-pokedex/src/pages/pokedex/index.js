@@ -52,7 +52,7 @@ const Pokedex = () => {
           name={pokemon.data.name} 
           id={pokemon.data.id} 
           avatar={pokemon.data.sprites.other.dream_world.front_default} 
-          types={pokemon.data.types.map((type) => (<li className={`${type.type.name}`}>{type.type.name}</li>))} 
+          types={pokemon.data.types.map((type, index) => (<li key={index} className={`${type.type.name}`}>{type.type.name}</li>))} 
           to={`/pokemon/${pokemon.data.id}`} />
         ))}
       </PokeContainer>

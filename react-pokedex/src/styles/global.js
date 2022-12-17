@@ -20,5 +20,13 @@ export default createGlobalStyle`
         text-decoration: none;
 
     }
+
+    ul{
+        padding: 0;
+    }
+
+    li{
+        list-style: none;
+    }
     
 `

@@ -4,28 +4,32 @@ export const Container = styled.div`
     height: 100%;
     width: 100%;
     margin: auto;
+    padding: 0.5rem;
 
     background-color: #F1CAD0;
 
     @media (min-width: 798px){
-        max-width: 18rem;
-        max-height: 18rem;
-    }
-`
-
+        max-width: 16rem;
+        max-height: 16rem;
+    } 
+    `
 export const TitleContainer = styled.div`
-    margin: .5rem;
 
     display: flex;
     justify-content: center;
 
     h3 {
+        margin: 0.5rem;
         color: #c95467;
         font-weight: 400;
         font-size: 1.25rem;
         text-transform: capitalize;
     }
 `
+
+
+
+
 
 export const ImageContainer = styled.div`
     margin: auto;
@@ -39,28 +43,30 @@ export const ImageContainer = styled.div`
         height: 5rem;
         width: 5rem;
     }
-`
+ `
 
 export const InfoContainer = styled.div`
-    margin: .5rem;
-
+    
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
-    font-size: .7rem;
 
 `
 
 export const TypesContainer = styled.div`
+    width: 100%;
+    display: flex;
+
     ul{
+        width: 100%;
         list-style: none;
+        
 
         display: flex;
+        justify-content: space-around;
+
 
         li {
-        margin: 0 .2rem;
         padding: .2rem .3rem;
         border-radius: .5rem;
         
