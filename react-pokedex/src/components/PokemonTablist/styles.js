@@ -119,6 +119,84 @@ export const AboutItem = styled.ul`
     }
 `
 
-export const BaseStatsContainer = styled.div`
-    
+export const BStatsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+export const BSItem = styled.ul`
+    margin-right: 1rem;
+
+    list-style: none;
+    line-height: 1.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #999999;
+
+
+    li{
+        display: flex;
+        justify-content: space-between;
+
+
+        span{
+            display: flex;
+            
+            width: 100%;
+            max-width: 80%;
+        }
+
+        p {
+            color: #000;
+            text-align: start;
+            
+        }
+    }
+`
+export const TotalContainer = styled.div`
+
+    max-width: 20rem;
+
+   
+`
+
+export const MovesContainer = styled.div`
+    margin: 1rem;
+    height: 100%;
+
+    ul {
+        list-style: none;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .2rem;
+        
+        li {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            text-align: center;
+
+            margin-right: 1rem;
+            margin-bottom: 1.7rem;
+            position: relative;
+            transition: box-shadow 0.3s ease-out;
+            &:hover{
+            position: relative;
+            box-shadow: #000 0px -1.5rem 0px inset;
+            transition: box-shadow 0.3s ease-out;
+            color: #FFF;
+            
+            }
+            
+        }
+
+        @media (min-width: 481px){
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (min-width: 680px){
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+    }    
+
 `

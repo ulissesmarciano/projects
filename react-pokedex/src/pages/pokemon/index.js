@@ -82,6 +82,14 @@ const Pokemon = () => {
             male={`${((gender.gender_rate*-100)/8)+100}%`}
             eggGroup={gender.egg_groups[0].name}
             eggCycle={gender.egg_groups[1].name}
+            hp={pokemon.stats?.[0].base_stat}
+            attack={pokemon.stats[1].base_stat}
+            defense={pokemon.stats[2].base_stat}
+            spAtk={pokemon.stats[3].base_stat}
+            spDef={pokemon.stats[4].base_stat}
+            speed={pokemon.stats[5].base_stat}
+            total={pokemon.stats.map((base) => (base.base_stat)).reduce((prev, curr) => prev + curr)}
+            move={pokemon?.moves?.map((move) => (<li>{move.move.name}</li>))}
           />
         </SkillsContainer>
       </SecondSection>
