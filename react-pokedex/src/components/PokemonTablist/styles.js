@@ -52,18 +52,16 @@ export const WrapperTabPanel = styled(TabPanel)`
 `
 
 export const AboutContainer = styled.div`
+    margin: 0 2rem;
+    padding: 0 2em;
+    
     display: flex;
     flex-direction: column;
 
-    margin: 0 2rem;
-    padding: 0 2em;
-
-
     h2{
-        margin: .5rem 0 0 -.5rem;
+        margin: 0 0 1rem -.5rem;
         font-size: 1.5rem;
     }
-
 
     @media(min-width: 540px){
         margin: 0 4rem;
@@ -74,8 +72,53 @@ export const AboutContainer = styled.div`
         margin: 0 8rem;
         padding: 0 4rem;
     }
+
 `
 
 export const AboutItem = styled.ul`
+    
 
+    li {
+        color: #999;
+
+        display: flex;
+
+        p {
+            color: #000;
+            margin-left: 1rem;
+        }
+
+        span {
+            margin-left: 0.5rem;
+            p{
+                color: #000;
+            }
+            @media(min-width: 768px){
+            font-size: 1.25rem;
+            font-weight: 500;
+            }
+        }
+        
+        div {
+            display: flex;
+            margin-left: 1rem;
+            span {
+                display: flex;
+                
+                img {
+                  height: 1rem;
+                  margin-top: .2rem;
+                  margin-right: -.8rem;
+                }
+            }
+        }
+        @media(min-width: 768px){
+        font-size: 1.25rem;
+        font-weight: 600;
+        }
+    }
+`
+
+export const BaseStatsContainer = styled.div`
+    
 `

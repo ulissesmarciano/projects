@@ -11,6 +11,7 @@ import { Container, FirstSection, HeadContainer, TitleContainer, ImageContainer,
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState([])
+  const [gender, setGender] = useState([])
   const [loading, setLoading] = useState(true)
 
   const { id } = useParams();
@@ -21,13 +22,25 @@ const Pokemon = () => {
     setLoading(false);
   }
 
+  const getGender = async (id) => {
+    const detail = await getPokemonGender(id)
+    setGender(detail.data)
+    console.log(detail.data)
+  }
+
   const getPokemonData = async (id) => {
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
     return res
   }
+
+  const getPokemonGender = async (id) =>{
+    const gen = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    return gen;
+  }
   
   useEffect(() => {
     getPokemon(id)
+    getGender(id)
   }, [])
 
   return (<>
@@ -62,7 +75,13 @@ const Pokemon = () => {
         </TypesContainer>
         <SkillsContainer>
           <PokemonTablist 
-          
+            height={`${(pokemon.height/3.048).toFixed(2)} feet (${(pokemon.height/10).toFixed(2)} cm)`}
+            weight={`${(pokemon.weight/4.436).toFixed(1)} lbs (${(pokemon.weight)/10} kg)`}
+            abilities={pokemon?.abilities?.map((ability) => ((<span>{ability.ability.name}</span>))).reduce((prev, curr) => [prev, ', ', curr])}
+            female={`${(gender.gender_rate*100)/8}%`}
+            male={`${((gender.gender_rate*-100)/8)+100}%`}
+            eggGroup={gender.egg_groups[0].name}
+            eggCycle={gender.egg_groups[1].name}
           />
         </SkillsContainer>
       </SecondSection>

@@ -8,7 +8,11 @@ import Female from '../../assets/icons/female.png'
 const PokemonTablist = ({
     height,
     weight,
-    abilities
+    abilities,
+    male,
+    female,
+    eggGroup,
+    eggCycle
 }) => {
   return (<>
     <Container>
@@ -28,9 +32,9 @@ const PokemonTablist = ({
                             <li>Weight <span><p>{weight}</p></span></li>
                             <li>Abilities <span><p>{abilities}</p></span></li>
                         <h2>Breeding</h2>
-                            <li>Gender<span><p>{abilities}</p></span></li>
-                            <li>Abilities <span><p>{abilities}</p></span></li>
-                            <li>Abilities <span><p>{abilities}</p></span></li>
+                            <li>Gender <div><span><img src={Male} alt="Símbolo Macho"/><p>{male}</p></span><span><img src={Female} alt="Símbolo Macho"/><p>{female}</p></span></div></li>
+                            <li>Egg Group<p>{eggGroup}</p></li>
+                            <li>Egg Cycle<p>{eggCycle}</p></li>
                         </AboutItem>
                     </AboutContainer>
                 </WrapperTabPanel>
