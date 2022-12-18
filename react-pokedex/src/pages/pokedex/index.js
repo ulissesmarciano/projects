@@ -29,6 +29,7 @@ const Pokedex = () => {
   }
 
   const pokemonFilter = (name) => {
+
     var filteredPokemons = []
     if(name === ""){
       getPokemons();

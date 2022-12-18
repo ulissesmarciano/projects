@@ -2,13 +2,13 @@ import React from 'react'
 
 import { ButtonContainer } from './styles'
 
-const SidebarButton = () => {
+const SidebarButton = ({onClick}) => {
   return (
     <div>
-      <ButtonContainer>
-        <div className='line1'/>
-        <div className='line2'/>
-        <div className='line3'/>
+      <ButtonContainer onClick={onClick}>
+        <span className='line1'/>
+        <span className='line2'/>
+        <span className='line3'/>
       </ButtonContainer>
     </div>
   )

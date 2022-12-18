@@ -12,15 +12,15 @@ export const WrapperTabs = styled(Tabs)`
     
     animation: showsize 1s ease-in-out;
 
-            @keyframes showsize {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-                
-            }
+    @keyframes showsize {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        
+    }
 `
 
 export const WrapperTabList = styled(TabList)`

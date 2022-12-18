@@ -56,15 +56,15 @@ const Pokemon = () => {
           <h3>{pokemon?.name}</h3>
             <p>{pokemon.id}</p>
         </TitleContainer>
-        <ImageContainer>
-          <img src={pokemon.sprites?.other?.dream_world.front_default} alt={`Foto de ${pokemon.name}`}/>
-        </ImageContainer>
-      </FirstSection>
       <CurveSection>
           <svg className={pokemon.types?.[0].type?.name} width="500"  viewBox="0 0 500 80" preserveAspectRatio="none">
           <path d="M0,0 L0,40 Q250,80 500,40 L500,0 Z" />
           </svg>
       </CurveSection>
+      </FirstSection>
+        <ImageContainer>
+          <img src={pokemon.sprites?.other?.dream_world.front_default} alt={`Foto de ${pokemon.name}`}/>
+        </ImageContainer>
       <SecondSection>
         <TypesContainer>
           <ul>

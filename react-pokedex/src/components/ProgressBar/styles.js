@@ -22,4 +22,6 @@ export const ProgressDiv = styled.div`
     height: 100%;
     border-radius: .5rem;
 
+    max-width: 100%;
+
 `

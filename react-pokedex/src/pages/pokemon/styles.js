@@ -72,7 +72,7 @@ export const FirstSection = styled.div`
     &.ghost {
         background-color: #6e5896;
     }
-
+    
     &.steel {
         background-color: #b9b7cf;
     }
@@ -84,8 +84,21 @@ export const FirstSection = styled.div`
     &.fairy {
         background-color: #f9aec7;
     }
+    
+    animation: slideDown 1s;
+    
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-100%);
+        }
 
-`
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+           
+    `
 
 export const HeadContainer = styled.div`
     margin: 1rem;
@@ -93,66 +106,48 @@ export const HeadContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
+    
     svg{
         height: 2.5rem;
         width: auto;
-
+        
         margin-left: -1rem;
         color: #fff;
     }
     
-
+    
 `
 
 export const TitleContainer = styled.div`
-    margin: 0 1rem;
-
+    margin: 0.5rem 2rem;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     h3 {
         font-size: 2rem;
         color: #FFFFFF;
         text-transform: capitalize;
     }
-
+    
     p {
         font-size: 1.5rem;
-
+        
         color: #FFFFFF;
         font-weight: 700;
     }
-
-
+    
+    
     @media(min-width: 700px){
         max-width: 700px;
         margin: auto;
     }
 `
-
-export const ImageContainer = styled.div`
-    display: flex;
-    justify-content: center;
-
-    
-    margin-top: 14%;
-
-    img {
-        height: 13rem;
-        width: auto;
-        z-index: 1;
-
-        position: absolute;
-        
-    }
-`
-
 export const CurveSection = styled.div`
     svg{
         width: 100%;
-        margin-top: -1rem;
+        margin-top: 7.9rem;
         z-index: -1;
 
 
@@ -227,15 +222,46 @@ export const CurveSection = styled.div`
         &.fairy {
             fill: #f9aec7;
         }
+    
+    } 
+        
+`
 
+export const ImageContainer = styled.div`
+    margin-top: 25vh;
+    align-self: center;
+
+    position: absolute;
+
+    img {
+        height: 13rem;
+        width: auto;
+        z-index: 1;
+
+       
     }
 `
+
 
 export const SecondSection = styled.div`
     width: 100%;
     height: 55%;
     
+    margin-top: 6.5rem;
     
+    animation: slideUp 1s;
+    
+    @keyframes slideUp {
+        0% {
+            transform: translateY(100%);
+            opacity: 0.6;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
 `
 
 export const TypesContainer = styled.div`

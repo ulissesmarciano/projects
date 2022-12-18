@@ -13,11 +13,13 @@ import {
 
 import { SidebarButton } from '../SidebarButton'
 import { SearchInput } from '../SearchInput'
+import { Sidebar } from '../Sidebar'
 
 const Header = ({pokemonFilter}) => {
   const [showSearch, setShowSearch] = useState(false)
-
-
+  const [sidebar, setSidebar] = useState(false)
+  const showSidebar = () => setSidebar(!sidebar)
+  
   return (
     <div>
       <Container>
@@ -30,7 +32,8 @@ const Header = ({pokemonFilter}) => {
         <CenterContainer>
           <SearchFormContainer>
             {showSearch && <SearchInput pokemonFilter={pokemonFilter}/>}
-            <SidebarButton/>
+            <SidebarButton onClick={showSidebar}/>
+            {sidebar && <Sidebar active={setSidebar}/>}
           </SearchFormContainer>
           <DisplayTop />
         </CenterContainer>
