@@ -54,9 +54,7 @@ const Pokemon = () => {
         </HeadContainer>
         <TitleContainer>
           <h3>{pokemon?.name}</h3>
-            {pokemon.id < 10 && <p>#00{pokemon.id}</p>}
-            {pokemon.id > 10 && <p>#0{pokemon.id}</p>}
-            {pokemon.id > 100 && <p>#{pokemon.id}</p>}
+            <p>{pokemon.id}</p>
         </TitleContainer>
         <ImageContainer>
           <img src={pokemon.sprites?.other?.dream_world.front_default} alt={`Foto de ${pokemon.name}`}/>

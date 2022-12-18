@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import SearchIcon from '../../assets/icons/searchicon.png'
 
 import { 
   Container, 
@@ -13,15 +15,21 @@ import { SidebarButton } from '../SidebarButton'
 import { SearchInput } from '../SearchInput'
 
 const Header = ({pokemonFilter}) => {
+  const [showSearch, setShowSearch] = useState(false)
+
+
   return (
     <div>
       <Container>
         <ButtonContainer>
-          <ButtonSearch />
+          <ButtonSearch onClick={() => setShowSearch(!showSearch)}>
+            {showSearch ? false : true}
+            <img src={SearchIcon} alt=""/>
+          </ButtonSearch>
         </ButtonContainer>
         <CenterContainer>
           <SearchFormContainer>
-            <SearchInput pokemonFilter={pokemonFilter}/>
+            {showSearch && <SearchInput pokemonFilter={pokemonFilter}/>}
             <SidebarButton/>
           </SearchFormContainer>
           <DisplayTop />

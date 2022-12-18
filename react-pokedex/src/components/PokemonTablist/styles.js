@@ -10,7 +10,17 @@ export const Container = styled.div`
 export const WrapperTabs = styled(Tabs)`
     height: 100%;
     
+    animation: showsize 1s ease-in-out;
 
+            @keyframes showsize {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+                
+            }
 `
 
 export const WrapperTabList = styled(TabList)`
@@ -32,6 +42,8 @@ export const WrapperTabList = styled(TabList)`
 `
 export const WrapperTab = styled(Tab)`
     list-style: none;
+
+    
 `
 
 export const DescriptionContainer = styled.div`
@@ -72,6 +84,17 @@ export const AboutContainer = styled.div`
         margin: 0 8rem;
         padding: 0 4rem;
     }
+    animation: showsize 1s ease-in-out;
+
+            @keyframes showsize {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+                
+            }
 
 `
 
@@ -117,6 +140,7 @@ export const AboutItem = styled.ul`
         font-weight: 600;
         }
     }
+    
 `
 
 export const BStatsContainer = styled.div`
@@ -151,6 +175,17 @@ export const BSItem = styled.ul`
             
         }
     }
+    animation: showsize 1s ease-in-out;
+
+            @keyframes showsize {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+                
+            }
 `
 export const TotalContainer = styled.div`
 
@@ -197,6 +232,17 @@ export const MovesContainer = styled.div`
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
 
-    }    
+    }
+    animation: showsize 1s ease-in-out;
+
+            @keyframes showsize {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+                
+            }    
 
 `

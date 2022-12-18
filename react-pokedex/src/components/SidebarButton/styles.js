@@ -12,6 +12,7 @@ export const ButtonContainer = styled.button`
     border: 0;
     background-color: transparent;
 
+
     .line1{
         width: 100%;
         

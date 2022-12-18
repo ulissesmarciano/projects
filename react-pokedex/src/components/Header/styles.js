@@ -22,7 +22,31 @@ export const ButtonContainer = styled.div`
     
         border-radius: 50px;
         border: 3px solid #ffffff;
-        background-color: #44B6F9;
+        background-color: #133366;
+
+        //position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            height: 2rem;
+            width: auto;
+
+
+            animation: bright 1s alternate infinite;
+
+            @keyframes bright {
+                0% {
+                    opacity: 0.8;
+                }
+                100% {
+                    opacity: 1;
+                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, .5))
+            }
+            }
+        }
     
     `
 
@@ -36,12 +60,10 @@ export const CenterContainer = styled.div`
 
 export const SearchFormContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: 70%;
     width: 100%;
-    
-    background-color: #CB2743;
     
 `
 

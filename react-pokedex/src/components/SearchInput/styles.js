@@ -10,6 +10,18 @@ export const InputContainer = styled.div`
 
     display: flex;
     align-items: center;
+
+    animation: showsize 1s ease-in-out;
+
+            @keyframes showsize {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+                
+            }
 `
 
 export const SearchInputItem = styled.input`
