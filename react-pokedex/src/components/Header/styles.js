@@ -24,7 +24,6 @@ export const ButtonContainer = styled.div`
         border: 3px solid #ffffff;
         background-color: #133366;
 
-        //position: relative;
 
         display: flex;
         justify-content: center;

@@ -28,11 +28,9 @@ const PokemonTablist = ({
     <Container>
         <WrapperTabs>
             <WrapperTabList>
-            <WrapperTab>About</WrapperTab>
-            <span/>
-            <WrapperTab>Base Stats</WrapperTab>
-            <span/>
-            <WrapperTab>Moves</WrapperTab>
+            <WrapperTab className="about">About</WrapperTab>
+            <WrapperTab className="baseStats">Base Stats</WrapperTab>
+            <WrapperTab className="moves">Moves</WrapperTab>
             </WrapperTabList>
             <DescriptionContainer>
                 <WrapperTabPanel>

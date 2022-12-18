@@ -30,20 +30,37 @@ export const WrapperTabList = styled(TabList)`
     justify-content: space-around;
     align-items: center;
 
-
-    span {
-        height: 2.5rem;
-        border: 1px solid #999999;
-    }
-
     @media (min-width: 481px){
         padding: 1rem 4rem;
     }
 `
 export const WrapperTab = styled(Tab)`
     list-style: none;
+    padding: 3% 8%;
+
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: none;
+
+    font-weight: bolder;
 
     
+
+    transition: 500ms;
+    &:hover{
+        transition: all 0.5s;
+        cursor: pointer;
+        -webkit-transform: translateY(-4%);
+        transform: translateY(-4%);
+        box-shadow: rgb(0 0 0 / 20%) 0px -15px 1rem;
+    }
+
+    &:focus{
+        transition: all 0.5s;
+        cursor: pointer;
+        -webkit-transform: translateY(-4%);
+        transform: translateY(-4%);
+        box-shadow: rgb(0 0 0 / 20%) 0px -15px 1rem;
+    }
 `
 
 export const DescriptionContainer = styled.div`
