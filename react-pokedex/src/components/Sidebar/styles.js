@@ -36,28 +36,20 @@ export const ButtonCloseContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   max-width: 62.5rem;
-  padding: 1rem;
   width: 100%;
   margin: auto;
   
-  svg {
-    color: #000000;
-    width: 2.7rem;
-    height: 2.7rem;
-    cursor: pointer;
+  animation: fadeIn 3s;
 
-    animation: fadeIn 3s;
-
-    @keyframes fadeIn {
-      from{
-        opacity: 0;
-      }
-
-      to{
-        opacity: 1;
-      }
-
+  @keyframes fadeIn {
+    from{
+      opacity: 0;
     }
+
+    to{
+      opacity: 1;
+    }
+
   }
 `
 

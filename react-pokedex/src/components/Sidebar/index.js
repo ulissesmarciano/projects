@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FiX } from 'react-icons/fi';
+import { SidebarCloseButton } from '../SidebarCloseButton';
 
 import {ButtonCloseContainer, Container, Content} from './styles'
 
@@ -11,7 +11,7 @@ const Sidebar = ({active}) => {
   return (
     <Container sidebar={active}>
       <ButtonCloseContainer>
-        <FiX onClick={closeSidebar} />  
+        <SidebarCloseButton onClick={closeSidebar} />  
       </ButtonCloseContainer>
       <Content>
           

@@ -18,7 +18,18 @@ export const ButtonContainer = styled.button`
         
         background-color: #7ce55c;
         border: 3px solid #7ce55c;
-        border-radius: 1rem;
+        animation: slideForLeft1 3s ;
+
+        @keyframes slideForLeft1 {
+            from{
+                transform: translateX(90%);
+                opacity: 0;
+            }
+
+            to{
+            opacity: 1;
+            }
+        }
     }
 
     .line2{
@@ -26,7 +37,19 @@ export const ButtonContainer = styled.button`
         
         background-color: #f9ce39;
         border: 3px solid #f9ce39;
-        border-radius: 1rem;
+
+        animation: slideForLeft2 3s ;
+
+        @keyframes slideForLeft2 {
+            from{
+                transform: translateX(110%);
+                opacity: 0;
+            }
+
+            to{
+            opacity: 1;
+            }
+        }
     }
     
 
@@ -35,6 +58,19 @@ export const ButtonContainer = styled.button`
         
         background-color: #fe745e;
         border: 3px solid #fe745e;
-        border-radius: 1rem;
+
+        animation: slideForLeft3 3s ;
+
+            @keyframes slideForLeft3 {
+        from{
+            transform: translateX(130%);
+            opacity: 0;
+        }
+
+        to{
+        opacity: 1;
+        }
+
+  }
     }
 `
