@@ -2,7 +2,7 @@ import React from 'react'
 
 import { SidebarCloseButton } from '../SidebarCloseButton';
 
-import {ButtonCloseContainer, Container, Content} from './styles'
+import {ButtonCloseContainer, Container, Content, FilterButton} from './styles'
 
 const Sidebar = ({active}) => {
     const closeSidebar = () => {
@@ -14,7 +14,8 @@ const Sidebar = ({active}) => {
         <SidebarCloseButton onClick={closeSidebar} />  
       </ButtonCloseContainer>
       <Content>
-          
+        <h2>Filtro</h2>
+        
       </Content>
     </Container>
   )
