@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 import SidebarButton from '../SidebarButton'
 import PokeSearch from '../../assets/icons/searchicon.png'
 import Icon from 'react-native-vector-icons/FontAwesome';

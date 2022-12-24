@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Pokedex from './pages/pokedex';
+import Pokemon from './pages/pokemon'
 
 function PokedexScreen() {
     return (
@@ -13,10 +14,7 @@ function PokedexScreen() {
 
 function PokemonScreen() {
     return (
-    <View style={{flex: 1, alignItems: 'center', 
-        justifyContent: 'center'}}>
-        <Text> Pokemon Screen </Text>
-    </View>
+    <Pokemon/>
     );
 }
 
@@ -42,6 +40,7 @@ function PokemonScreen() {
             options={{
                 title: ' ',
                 headerTransparent: true,
+                headerTintColor: '#fff',
             }}
            />
          </Stack.Navigator>

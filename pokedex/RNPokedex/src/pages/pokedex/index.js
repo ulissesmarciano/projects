@@ -7,16 +7,16 @@ import Header from '../../components/Header'
 import PokemonCard from '../../components/PokemonCard'
 
 export default function Pokedex () {
-  state = {
-    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-  };
+  
+    const data= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  
   const columns = 2 
   return (
     <SafeAreaView>
       <StatusBar barStyle="light-content" backgroundColor='#C01733' />
       <Header />
       <FlatList 
-        data={createRows(this.state.data, columns)}
+        data={createRows(data, columns)}
         numColumns={columns}
         renderItem={({ item }) => {
           if (item.empty) {
