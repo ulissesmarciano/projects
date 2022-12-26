@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { Container, ButtonContainer, ButtonSearch, SearchButtonImage, SearchContainer, DisplayTop, SearchOrientation, Input, InputContainer } from './styles'
 
-export default function Header() {
+export default function Header({value, onChangeText}) {
   const [showSearch, setShowSearch] = useState(false)
   return (
       <Container>
@@ -18,14 +18,18 @@ export default function Header() {
         </ButtonContainer>
         <SearchOrientation>
           <SearchContainer>
-            {showSearch && <InputContainer>
-            <Icon name="search" size={18} color="#ffffff90" />
-              <Input 
-              placeholder="Busque por Nome ou Número"
-              placeholderTextColor="#ffffff90"
-              style={{fontSize:15, color: "white", fontWeight: "600"}}
-              />
-            </InputContainer>}
+            {showSearch && 
+              <InputContainer>
+                <Icon name="search" size={18} color="#ffffff90" />
+                  <Input
+                  placeholder="Busque por Nome ou Número"
+                  placeholderTextColor="#ffffff90"
+                  style={{fontSize:15, color: "white", fontWeight: "600"}}
+                  onChangeText={onChangeText}
+                  //autoCapitalize={'none'}
+                  />
+              </InputContainer>
+            }
           </SearchContainer>
           <DisplayTop>
           </DisplayTop>
