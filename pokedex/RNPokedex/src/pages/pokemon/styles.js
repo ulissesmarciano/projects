@@ -19,6 +19,7 @@ export const PokeName = styled.Text`
     font-size: 28px;
     color: #fff;
     font-weight: 600;
+    text-transform: capitalize;
 `
 
 export const PokeId = styled.Text`

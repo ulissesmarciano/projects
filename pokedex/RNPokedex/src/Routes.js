@@ -6,29 +6,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Pokedex from './pages/pokedex';
 import Pokemon from './pages/pokemon'
 
-function PokedexScreen() {
-    return (
-        <Pokedex />
-    );
-}
-
-function PokemonScreen() {
-    return (
-    <Pokemon/>
-    );
-}
-
-
-
    const Stack = createNativeStackNavigator();
 
-   export default function Routes() {
+   function Routes() {
      return (
        <NavigationContainer>
          <Stack.Navigator>
            <Stack.Screen 
             name="Pokedex Screen" 
-            component={PokedexScreen} 
+            component={Pokedex} 
             options={{
                 title:' ',
                 headerShown: false
@@ -36,7 +22,7 @@ function PokemonScreen() {
            />
            <Stack.Screen 
             name="Pokemon Screen" 
-            component={PokemonScreen} 
+            component={Pokemon} 
             options={{
                 title: ' ',
                 headerTransparent: true,
@@ -47,3 +33,5 @@ function PokemonScreen() {
        </NavigationContainer>
       );
     }
+
+export default Routes

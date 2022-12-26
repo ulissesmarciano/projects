@@ -1,48 +1,59 @@
-import React from 'react'
-import { FlatList, SafeAreaView, StatusBar, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { FlatList, SafeAreaView, StatusBar, Text } from 'react-native'
+import axios from 'axios'
 
-import { CardEmpty } from './styles'
+
+import { CardEmpty, Pokelist, Type } from './styles'
 
 import Header from '../../components/Header'
 import PokemonCard from '../../components/PokemonCard'
+import { POKEMON_TYPE_COLORS } from '../../util/constants'
 
-export default function Pokedex () {
+const Pokedex = ({navigation}) => {
+    useEffect(() => {
+      getPokemons();
+    }, [])
   
-    const data= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+    const [pokemons, setPokemons] = useState([])
   
-  const columns = 2 
+    const getPokemons = () => {
+      var limit = 15
+      var endpoints = []
+  
+      for (var i = 1; i <= limit; i++){
+        endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`)
+      } 
+  
+      axios
+      .all(endpoints.map((endpoint) => axios.get(endpoint)))
+      .then((res) => setPokemons(res))
+      .catch((err) => console.log(err))
+    }
+
+    //console.log(pokemons)
+ 
   return (
     <SafeAreaView>
       <StatusBar barStyle="light-content" backgroundColor='#C01733' />
-      <Header />
-      <FlatList 
-        data={createRows(data, columns)}
-        numColumns={columns}
-        renderItem={({ item }) => {
-          if (item.empty) {
-            return <CardEmpty />;
+      <Header/>
+      <FlatList
+          data={pokemons}
+          numColumns={2}
+          renderItem={(pokemon, index) => 
+            <PokemonCard 
+              name={pokemon.item.data.name}
+              avatar={pokemon.item.data.sprites.other['official-artwork'].front_default}
+              id={pokemon.item.data.id}
+              type={pokemon.item.data.types.map((type) => (<Type style={{backgroundColor: POKEMON_TYPE_COLORS[`${type.type.name}`]}} >{type.type.name}</Type>))} 
+              onClick={() => {navigation.navigate('Pokemon Screen', pokemon.item.data.id)}} 
+              key={index}
+            />
           }
-          return (
-            <PokemonCard />
-          );
-        }}
-      />
+        />
     </SafeAreaView>
   )
 }
 
-function createRows(data, columns) {
-  const rows = Math.floor(data.length / columns);
-  let lastRowElements = data.length - rows * columns;
 
-  while (lastRowElements !== columns) {
-    data.push({
-      id: `empty-${lastRowElements}`,
-      name: `empty-${lastRowElements}`,
-      empty: true
-    });
-    lastRowElements += 1;
-  }
 
-  return data;
-}
+export default Pokedex

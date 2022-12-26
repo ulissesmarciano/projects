@@ -16,6 +16,7 @@ export const PokemonName = styled.Text`
     color: #c95467;
     font-weight: 500;
     font-size: 18px;
+    text-transform: capitalize;
 `
 
 export const PokemonImage = styled.Image`
@@ -45,16 +46,6 @@ export const TypesContainer = styled.View`
     justify-content: space-between;
 
 `
-
-export const Type = styled.Text`
-    padding: 2px 10px;
-    margin: 2px;
-    
-    color: #fff;
-    border-radius: 10px;
-   
-`
-
 
 export const PokeId = styled.Text`
     font-weight: 500;

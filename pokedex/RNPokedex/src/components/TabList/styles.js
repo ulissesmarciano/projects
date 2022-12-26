@@ -21,6 +21,8 @@ export const TabName = styled.Text`
 `
 export const SkillsContainer = styled.View`
     width: 80%;
+    margin-top: -35px;
+
 `
 
 export const LineSkill = styled.View`
@@ -42,13 +44,23 @@ export const SkillTitle = styled.Text`
     line-height: 35px;
 `
 
+export const GenderContainer = styled.View`
+    width: 53%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+`
+
 
 export const SkillContent = styled.Text`
-    width: 100%;
     color: #000;
     font-size: 16px;
     font-weight: 600;
     line-height: 35px;
+    text-transform: capitalize;
 
     display: flex;
     justify-content: center;
@@ -58,6 +70,8 @@ export const SkillContent = styled.Text`
 export const Icons = styled.Image`
     height: 16px;
     width: 16px;
+
+    margin-right: 40px;
 `
 
 export const Subtitle = styled.Text`
@@ -76,6 +90,19 @@ export const MovesScreenContent = styled.View`
     flex-basis: 0;
 
     border-radius: 4px;
+`
+
+export const MoveName = styled.Text`
+    color: #000;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 600;
+`
+
+export const AbilitiesView = styled.View`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 `
 
 export const MoveEmpty = styled.View`

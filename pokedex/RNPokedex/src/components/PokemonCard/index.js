@@ -1,25 +1,23 @@
-import { View } from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/native'
 
-import { POKEMON_TYPE_COLORS } from '../../util/constants'
-import { Container, PokemonName, PokemonImage, InfoView, TypesContainer, Type, PokeId } from './styles'
+
+
+import { Container, PokemonName, PokemonImage, InfoView, TypesContainer, PokeId } from './styles'
 
 const PokemonUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
 
-export default function PokemonCard({name, avatar, id, type, onPress, className}) {
-  const navigation = useNavigation();
+export default function PokemonCard({name, avatar, id, type, onClick, key }) {
   return (
-    <Container onPress={() => navigation.navigate('Pokemon Screen')}>
-        <PokemonName>Bulbasaur</PokemonName>
+    <Container key={key} onPress={onClick}>
+        <PokemonName>{name}</PokemonName>
         <PokemonImage
-        source={{ uri: PokemonUrl}}
+        source={{ uri: `${avatar}`}}
         />
         <InfoView>
           <TypesContainer>
-            <Type style={{backgroundColor: POKEMON_TYPE_COLORS['normal']}} >Grass</Type>
+            {type}
           </TypesContainer>
-            <PokeId>#01</PokeId>
+            <PokeId>{id > 10 ? `#${id}` : `#0${id}`}</PokeId>
         </InfoView>
     </Container>
   )

@@ -2,10 +2,10 @@ import React from "react";
 import { BarContainer, StatusBar } from "./styles";
 
 
-export default function ProgressBar() {
+export default function ProgressBar({progress}) {
   return (
     <BarContainer>
-        <StatusBar style={{width: '80%', backgroundColor: `green`}}/>
+        <StatusBar style={{width:`${progress}%`, backgroundColor: `${progress < 50 ? "red" : "green"}`}}/>
     </BarContainer>
   )
 }
