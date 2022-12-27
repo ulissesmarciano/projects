@@ -45,8 +45,8 @@ const AboutScreen = ({
                     <SkillContent><Icons source={Female}/>{female}</SkillContent>
                     </GenderContainer>
                     
-                    <SkillContent>{eggGroup}</SkillContent>
-                    <SkillContent>{eggCycle}</SkillContent>
+                    <SkillContent>{eggGroup === true ? <Text>None</Text> : eggGroup}</SkillContent>
+                    <SkillContent>{eggCycle === true ? <Text>None</Text> : eggCycle}</SkillContent>
                 </View>
             </LineSkill>
         </View>

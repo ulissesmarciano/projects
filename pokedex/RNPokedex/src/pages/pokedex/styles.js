@@ -27,11 +27,10 @@ export const Type = styled.Text`
 `
 
 export const Loader = styled.View`
-    height: 80%;
+    height: 85%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: orange;
 `

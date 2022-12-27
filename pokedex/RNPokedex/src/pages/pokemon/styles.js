@@ -59,3 +59,13 @@ export const SecondSection = styled.View`
 
     margin: 0 30px;
 `
+
+export const Loader = styled.View`
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: orange;
+`

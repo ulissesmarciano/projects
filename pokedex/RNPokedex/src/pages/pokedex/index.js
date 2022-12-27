@@ -17,7 +17,7 @@ const Pokedex = ({navigation}) => {
     const [loading, setLoading] = useState(true)
     
     const getPokemons = () => {
-      var limit = 15
+      var limit = 151
       var endpoints = []
   
       for (var i = 1; i <= limit; i++){
@@ -53,13 +53,13 @@ const Pokedex = ({navigation}) => {
       <Header
         onChangeText={pokemonFilter}
         
-      />
-      {loading ? (
-        <Loader>
-        <ActivityIndicator size="large" color="#C01733" />
-      </Loader>
-      ) : (
+        />
         <Pokelist>
+        {loading ? (
+          <Loader>
+            <ActivityIndicator size="large" color="#C01733" />
+          </Loader>
+        ) : (
         <FlatList
             data={pokemons}
             numColumns={2}
@@ -74,8 +74,8 @@ const Pokedex = ({navigation}) => {
               />
             }
           />
+        )}
       </Pokelist>
-      )}
       
     </SafeAreaView>
   )

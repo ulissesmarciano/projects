@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, FlatList } from 'react-native'
+import { Text, FlatList, ActivityIndicator, Loader } from 'react-native'
 import axios from 'axios'
 import { StatusBar } from 'expo-status-bar'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -9,12 +9,11 @@ import TabList from '../../components/TabList'
 
 import { Container, FirstSection, PokeNameContainer, PokeName, PokeId, PokemonImageContainer, PokemonImage, TypesContainer, Type, SecondSection } from './styles'
 
-const PokemonUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-
 const Pokemon = ({route}) => {
   const  id  = route.params
   const [pokemon, setPokemon] = useState([])
   const [gender, setGender] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const getPokemon = async (id) => {
     const details = await getPokemonData(id);
@@ -45,24 +44,24 @@ const Pokemon = ({route}) => {
   return (
     <Container>
       <StatusBar barStyle="light-content"/>
-      <LinearGradient colors={[POKEMON_TYPE_COLORS[`${pokemon.types?.[0].type.name}`],  'transparent']}>
-        <FirstSection>
-          <PokeNameContainer>
-            <PokeName>{pokemon.name}</PokeName>
-            <PokeId>#{id > 10 ? pokemon.id : `0${pokemon.id}`}</PokeId>
-          </PokeNameContainer>
-          <PokemonImageContainer>
-            <PokemonImage source={{uri: pokemon.sprites?.other['official-artwork'].front_default}} />
-          </PokemonImageContainer>
-          <TypesContainer>
-            
-          </TypesContainer>
-        </FirstSection>
-      </LinearGradient>
+          <LinearGradient colors={[POKEMON_TYPE_COLORS[`${pokemon.types?.[0].type.name}`],  'transparent']}>
+            <FirstSection>
+            <PokeNameContainer>
+              <PokeName>{pokemon.name}</PokeName>
+              <PokeId>#{id > 10 ? pokemon.id : `0${pokemon.id}`}</PokeId>
+            </PokeNameContainer>
+            <PokemonImageContainer>
+              <PokemonImage source={{uri: pokemon.sprites?.other['official-artwork'].front_default}} />
+            </PokemonImageContainer>
+            <TypesContainer>
+              
+            </TypesContainer>
+          </FirstSection>
+        </LinearGradient>
         <SecondSection>
           <TabList 
-            height={pokemon.height}
-            weight={pokemon.weight}
+            height={`${(pokemon.height/3.048).toFixed(2)} feet (${(pokemon.height/10).toFixed(2)} cm)`}
+            weight={`${(pokemon.weight/4.436).toFixed(1)} lbs (${(pokemon.weight)/10} kg)`}
             abilities={pokemon?.abilities?.map((ability, index) => ((<Text key={index}>{ability?.ability?.name}</Text>))).reduce((prev, curr) => [prev, ', ', curr])}
             female={`${(gender.gender_rate*100)/8}%`}
             male={`${((gender.gender_rate*-100)/8)+100}%`}
