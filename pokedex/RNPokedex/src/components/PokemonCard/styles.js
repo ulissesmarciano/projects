@@ -8,6 +8,8 @@ export const Container = styled.TouchableOpacity`
     flex-basis: 0;
 
     border-radius: 4px;
+    z-index: -1;
+    
 `
 
 export const PokemonName = styled.Text`

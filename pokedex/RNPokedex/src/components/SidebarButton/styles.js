@@ -7,6 +7,8 @@ export const Container = styled.TouchableOpacity`
     display: flex;
     justify-content: space-between;
 
+    z-index: 2;
+
 `
 
 export const LineButton1 = styled.View`

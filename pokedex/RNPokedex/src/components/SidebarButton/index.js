@@ -3,9 +3,9 @@ import React from 'react'
 
 import { Container, LineButton1, LineButton2, LineButton3 } from './styles'
 
-export default function SidebarButton() {
+export default function SidebarButton({onClick}) {
   return (
-    <Container>
+    <Container onPress={onClick}>
         <LineButton1 />
         <LineButton2 />
         <LineButton3 />

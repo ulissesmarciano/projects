@@ -10,6 +10,7 @@ export const CardEmpty = styled.View`
 
 export const Pokelist = styled.View`
     display: flex;
+    z-index: -1;
 `
 
 export const Type = styled.Text`

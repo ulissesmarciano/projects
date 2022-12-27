@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 
 import SidebarButton from '../SidebarButton'
+import SidebarCloseButton from '../SidebarCloseButton';
 import PokeSearch from '../../assets/icons/searchicon.png'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import SideBar from '../Sidebar';
 
 import { Container, ButtonContainer, ButtonSearch, SearchButtonImage, SearchContainer, DisplayTop, SearchOrientation, Input, InputContainer } from './styles'
 
-export default function Header({value, onChangeText}) {
+export default function Header({ onChangeText, focused }) {
   const [showSearch, setShowSearch] = useState(false)
+  const [showSideBar, setShowSidebar] = useState(false)
+  
   return (
       <Container>
         <ButtonContainer>
           <ButtonSearch onPress={() => setShowSearch(!showSearch)}>
-            {showSearch ? false : true}
             <SearchButtonImage source={PokeSearch}/>
           </ButtonSearch>
         </ButtonContainer>
@@ -26,7 +29,6 @@ export default function Header({value, onChangeText}) {
                   placeholderTextColor="#ffffff90"
                   style={{fontSize:15, color: "white", fontWeight: "600"}}
                   onChangeText={onChangeText}
-                  //autoCapitalize={'none'}
                   />
               </InputContainer>
             }
@@ -34,7 +36,8 @@ export default function Header({value, onChangeText}) {
           <DisplayTop>
           </DisplayTop>
         </SearchOrientation>
-        <SidebarButton/>
+          <SidebarButton onClick={() => setShowSidebar(!showSideBar)}/>
+          {showSideBar && <SideBar/>}
       </Container>
   )
 }
