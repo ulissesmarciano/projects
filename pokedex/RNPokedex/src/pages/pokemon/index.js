@@ -63,11 +63,11 @@ const Pokemon = ({route}) => {
           <TabList 
             height={pokemon.height}
             weight={pokemon.weight}
-            abilities={pokemon?.abilities?.map((ability, index) => ((<Text key={index}>{ability.ability.name}</Text>))).reduce((prev, curr) => [prev, ', ', curr])}
+            abilities={pokemon?.abilities?.map((ability, index) => ((<Text key={index}>{ability?.ability?.name}</Text>))).reduce((prev, curr) => [prev, ', ', curr])}
             female={`${(gender.gender_rate*100)/8}%`}
             male={`${((gender.gender_rate*-100)/8)+100}%`}
-            eggGroup={gender.egg_groups?.[0].name}
-            eggCycle={gender.egg_groups?.[1].name}
+            eggGroup={gender.egg_groups?.[0]?.name}
+            eggCycle={gender.egg_groups?.[1]?.name}
             hp={pokemon.stats?.[0]?.base_stat}
             attack={pokemon.stats?.[1]?.base_stat}
             defense={pokemon.stats?.[2]?.base_stat}

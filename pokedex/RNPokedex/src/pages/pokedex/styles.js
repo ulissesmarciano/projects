@@ -25,3 +25,13 @@ export const Type = styled.Text`
     border-radius: 10px;
     text-transform: capitalize;
 `
+
+export const Loader = styled.View`
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: orange;
+`

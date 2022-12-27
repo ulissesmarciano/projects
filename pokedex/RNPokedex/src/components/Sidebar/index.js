@@ -3,14 +3,14 @@ import React from 'react'
 
 import { SidebarContainer, OptionsContainer, Title, Link, LinkText } from './styles'
 
-const SideBar = () => {
+const SideBar = ({filterAlphabet, filterType, filterEgg}) => {
   return (
     <SidebarContainer>
       <OptionsContainer>
         <Title>Order by</Title>
-        <Link><LinkText>Alphabet</LinkText></Link>
-        <Link><LinkText>Type</LinkText></Link>
-        <Link><LinkText>Egg Cycle</LinkText></Link>
+        <Link onPress={filterAlphabet}><LinkText>Alphabet</LinkText></Link>
+        <Link onPress={filterType}><LinkText>Type</LinkText></Link>
+        <Link onPress={filterEgg}><LinkText>Egg Cycle</LinkText></Link>
       </OptionsContainer>
     </SidebarContainer>
     )

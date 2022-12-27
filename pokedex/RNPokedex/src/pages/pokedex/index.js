@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, SafeAreaView, StatusBar, Text } from 'react-native'
+import { FlatList, SafeAreaView, StatusBar, ActivityIndicator } from 'react-native'
 import axios from 'axios'
 
-import { CardEmpty, Pokelist, Type } from './styles'
+import { CardEmpty, Pokelist, Type, Loader } from './styles'
 import { POKEMON_TYPE_COLORS } from '../../util/constants'
 
 import Header from '../../components/Header'
@@ -14,6 +14,7 @@ const Pokedex = ({navigation}) => {
     }, [])
   
     const [pokemons, setPokemons] = useState([])
+    const [loading, setLoading] = useState(true)
     
     const getPokemons = () => {
       var limit = 15
@@ -27,6 +28,7 @@ const Pokedex = ({navigation}) => {
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
       .then((res) => setPokemons(res))
       .catch((err) => console.log(err))
+      setLoading()
     }
 
     
@@ -50,8 +52,14 @@ const Pokedex = ({navigation}) => {
       <StatusBar barStyle="light-content" backgroundColor='#C01733' />
       <Header
         onChangeText={pokemonFilter}
+        
       />
-      <Pokelist>
+      {loading ? (
+        <Loader>
+        <ActivityIndicator size="large" color="#C01733" />
+      </Loader>
+      ) : (
+        <Pokelist>
         <FlatList
             data={pokemons}
             numColumns={2}
@@ -67,6 +75,8 @@ const Pokedex = ({navigation}) => {
             }
           />
       </Pokelist>
+      )}
+      
     </SafeAreaView>
   )
 }

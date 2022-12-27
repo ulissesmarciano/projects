@@ -34,7 +34,7 @@ export const Title = styled.Text`
 
     color: #FFF;
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 500;
 `
 
 export const Link = styled.TouchableOpacity`
@@ -52,6 +52,6 @@ export const Link = styled.TouchableOpacity`
 
 export const LinkText = styled.Text`
     color: #FFF;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
 `
