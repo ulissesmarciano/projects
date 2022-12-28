@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, FlatList, ActivityIndicator, Loader } from 'react-native'
+import { Text } from 'react-native'
 import axios from 'axios'
 import { StatusBar } from 'expo-status-bar'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -13,7 +13,6 @@ const Pokemon = ({route}) => {
   const  id  = route.params
   const [pokemon, setPokemon] = useState([])
   const [gender, setGender] = useState([])
-  const [loading, setLoading] = useState(true)
 
   const getPokemon = async (id) => {
     const details = await getPokemonData(id);
@@ -23,7 +22,7 @@ const Pokemon = ({route}) => {
   const getGender = async (id) => {
     const detail = await getPokemonGender(id)
     setGender(detail.data)
-    console.log(detail.data)
+    //console.log(detail.data)
   }
 
   const getPokemonData = async (id) => {
@@ -40,7 +39,7 @@ const Pokemon = ({route}) => {
     getPokemon(id)
     getGender(id)
   }, [])
-  console.log(pokemon)
+  //console.log(pokemon)
   return (
     <Container>
       <StatusBar barStyle="light-content"/>
@@ -66,7 +65,7 @@ const Pokemon = ({route}) => {
             female={`${(gender.gender_rate*100)/8}%`}
             male={`${((gender.gender_rate*-100)/8)+100}%`}
             eggGroup={gender.egg_groups?.[0]?.name}
-            eggCycle={gender.egg_groups?.[1]?.name}
+            eggCycle={gender.egg_groups?.[1]?.name }
             hp={pokemon.stats?.[0]?.base_stat}
             attack={pokemon.stats?.[1]?.base_stat}
             defense={pokemon.stats?.[2]?.base_stat}

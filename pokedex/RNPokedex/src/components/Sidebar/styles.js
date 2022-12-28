@@ -55,3 +55,22 @@ export const LinkText = styled.Text`
     font-size: 22px;
     font-weight: 600;
 `
+
+export const TypeLink = styled.TouchableOpacity`
+    flex-grow: 1;
+    width: 32%;
+    margin: 2px;
+    padding: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #C01733;
+
+`
+
+export const ItemName = styled.Text`
+    color: #FFF;
+    text-transform: capitalize;
+`

@@ -12,7 +12,7 @@ const Pokedex = ({navigation}) => {
     useEffect(() => {
       getPokemons();
     }, [])
-  
+    const columns = 2
     const [pokemons, setPokemons] = useState([])
     const [loading, setLoading] = useState(true)
     
@@ -60,19 +60,19 @@ const Pokedex = ({navigation}) => {
             <ActivityIndicator size="large" color="#C01733" />
           </Loader>
         ) : (
-        <FlatList
-            data={pokemons}
-            numColumns={2}
-            renderItem={(pokemon) => 
-              <PokemonCard 
-                name={pokemon.item.data.name}
-                avatar={pokemon.item.data.sprites.other['official-artwork'].front_default}
-                id={pokemon.item.data.id}
-                type={pokemon.item.data.types.map((type) => (<Type style={{backgroundColor: POKEMON_TYPE_COLORS[`${type.type.name}`]}} >{type.type.name}</Type>))} 
-                onClick={() => {navigation.navigate('Pokemon Screen', pokemon.item.data.id)}} 
-                key={pokemon.item.data.id}
-              />
-            }
+          <FlatList
+              data={pokemons}
+              numColumns={columns}
+              renderItem={(pokemon) => 
+                  <PokemonCard 
+                  name={pokemon.item.data?.name}
+                  avatar={pokemon.item.data?.sprites?.other['official-artwork'].front_default}
+                  id={pokemon.item.data?.id}
+                  type={pokemon.item.data?.types.map((type) => (<Type style={{backgroundColor: POKEMON_TYPE_COLORS[`${type.type?.name}`]}} >{type.type.name}</Type>))} 
+                  onClick={() => {navigation.navigate('Pokemon Screen', pokemon.item.data?.id)}} 
+                  key={pokemon.item.data?.id}
+                />
+              }
           />
         )}
       </Pokelist>
@@ -80,7 +80,6 @@ const Pokedex = ({navigation}) => {
     </SafeAreaView>
   )
 }
-
 
 
 export default Pokedex

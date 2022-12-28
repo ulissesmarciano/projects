@@ -33,7 +33,7 @@ export const ButtonSearch = styled.TouchableOpacity`
 
 export const SearchButtonImage = styled.Image`
     height: 25px;
-    width: 30px;
+    width: 25px;
 `
 export const SearchOrientation = styled.View`
     height: 100%;

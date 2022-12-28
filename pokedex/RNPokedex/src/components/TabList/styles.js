@@ -11,6 +11,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 align-items: center;
+
 `
 
 export const TabName = styled.Text`
@@ -22,7 +23,6 @@ export const TabName = styled.Text`
 export const SkillsContainer = styled.View`
     width: 80%;
     margin-top: -35px;
-
 `
 
 export const LineSkill = styled.View`
@@ -37,11 +37,11 @@ export const LineSkill = styled.View`
 
 export const SkillTitle = styled.Text`
     margin-right: 15px;
+    margin-bottom: 15px;
 
     font-size: 18px;
     font-weight: 800;
     color: #999;
-    line-height: 35px;
 `
 
 export const GenderContainer = styled.View`
@@ -56,10 +56,11 @@ export const GenderContainer = styled.View`
 
 
 export const SkillContent = styled.Text`
+    margin-bottom: 15px;
+
     color: #000;
     font-size: 16px;
     font-weight: 600;
-    line-height: 35px;
     text-transform: capitalize;
 
     display: flex;

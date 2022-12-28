@@ -45,8 +45,8 @@ const AboutScreen = ({
                     <SkillContent><Icons source={Female}/>{female}</SkillContent>
                     </GenderContainer>
                     
-                    <SkillContent>{eggGroup === true ? <Text>None</Text> : eggGroup}</SkillContent>
-                    <SkillContent>{eggCycle === true ? <Text>None</Text> : eggCycle}</SkillContent>
+                    <SkillContent>{eggGroup}</SkillContent>
+                    <SkillContent>{eggCycle}</SkillContent>
                 </View>
             </LineSkill>
         </View>
@@ -189,7 +189,7 @@ export default function TabList({
                     name={moves.item.props.children}
                 />
             }
-          />
+            />
         }
       </View>
     </Container>

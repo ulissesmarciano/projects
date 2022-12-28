@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 export const CardEmpty = styled.View`
     align-items: center;
-    background-color: transparent;
+    background-color: blue;
     flex-grow: 1;
     margin: 2px;
     flex-basis: 0;
@@ -11,6 +11,8 @@ export const CardEmpty = styled.View`
 export const Pokelist = styled.View`
     display: flex;
     z-index: -1;
+    height: 100%;
+    margin-bottom: -180px;
 `
 
 export const Type = styled.Text`
