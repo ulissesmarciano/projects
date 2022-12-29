@@ -11,10 +11,11 @@ import Login from "./pages/loginscreen";
 
 function App() {
     return (<>
+        <Header />
         <Router>
             <Routes>
-                <Login path="/login" element={Login} />
-                <Route path="/" element={HomeScreen}/>
+                <Route path="/home" element={<HomeScreen/>}/>
+                <Route path="/login" element={<Login/>} />
             </Routes>
         </Router>
 </>);}
