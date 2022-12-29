@@ -15,4 +15,19 @@ export const Container = styled.div`
   justify-content: flex-end;
 
   background-color: #308BC5;
+
+  right: ${props => props.sidebar ? '0' : '100%'};
+  animation: showSidebar .4s;
+
+  @keyframes showSidebar {
+    from{
+      opacity: 0;
+      width: 0;
+    }
+    
+    to{
+      opacity: 1;
+      width: 100%;
+    }
+  }
 `

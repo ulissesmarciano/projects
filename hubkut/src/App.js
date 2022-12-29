@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Router>
             <Routes>
-                <Route path="/home" element={<HomeScreen/>}/>
+                <Route path="/" element={<HomeScreen/>}/>
                 <Route path="/login" element={<Login/>} />
             </Routes>
         </Router>

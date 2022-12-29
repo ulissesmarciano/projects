@@ -2,10 +2,13 @@ import React from 'react'
 import SideBarCloseButton from '../SidebarCloseButton'
 import { Container } from './styles'
 
-const Sidebar = () => {
+const Sidebar = ({active}) => {
+  const closeSidebar = () => {
+    active(false)
+  }
   return (
-    <Container>
-      <SideBarCloseButton/>
+    <Container sidebar={active}>
+      <SideBarCloseButton onClick={closeSidebar}/>
     </Container>
   )
 }

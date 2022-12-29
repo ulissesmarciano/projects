@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+import Greetings from './section/greetings'
 
 const HomeScreen = () => {
   return (
-    <div
-    >HomeScreen
-    <Link to={"/login"}>Login</Link>
+    <div>
+      <Greetings />
     </div>
   )
 }
