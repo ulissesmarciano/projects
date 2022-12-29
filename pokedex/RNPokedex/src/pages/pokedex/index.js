@@ -52,12 +52,12 @@ const Pokedex = ({navigation }) => {
       <Header
         onChangeText={pokemonNameFilter}
         />
-        <Pokelist>
         {loading ? (
           <Loader>
             <ActivityIndicator size="large" color="#C01733" />
           </Loader>
         ) : (
+          <Pokelist>
           <FlatList
               data={pokemons}
               numColumns={columns}
@@ -71,8 +71,8 @@ const Pokedex = ({navigation }) => {
                 />
               }
           />
-        )}
       </Pokelist>
+        )}
       
     </SafeAreaView>
   )

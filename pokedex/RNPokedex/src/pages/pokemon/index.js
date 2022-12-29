@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text } from 'react-native'
+import { Text, ActivityIndicator } from 'react-native'
 import axios from 'axios'
 import { StatusBar } from 'expo-status-bar'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -7,12 +7,13 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { POKEMON_TYPE_COLORS } from '../../util/constants'
 import TabList from '../../components/TabList'
 
-import { Container, FirstSection, PokeNameContainer, PokeName, PokeId, PokemonImageContainer, PokemonImage, TypesContainer, Type, SecondSection } from './styles'
+import { Container, Loader, FirstSection, PokeNameContainer, PokeName, PokeId, PokemonImageContainer, PokemonImage, TypesContainer, Type, SecondSection } from './styles'
 
 const Pokemon = ({route}) => {
   const  id  = route.params
   const [pokemon, setPokemon] = useState([])
   const [gender, setGender] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const getPokemon = async (id) => {
     const details = await getPokemonData(id);
@@ -32,6 +33,7 @@ const Pokemon = ({route}) => {
 
   const getPokemonGender = async (id) =>{
     const gen = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    setLoading()
     return gen;
   }
 
@@ -44,7 +46,13 @@ const Pokemon = ({route}) => {
   return (
     <Container>
       <StatusBar barStyle="light-content"/>
-          <LinearGradient colors={[`${POKEMON_TYPE_COLORS[`${pokemon.types?.[0].type.name}`]}`,  'transparent']}>
+          
+          {loading ? (
+          <Loader>
+            <ActivityIndicator size="large" color="#C01733" />
+          </Loader>
+          ) : (<>
+        <LinearGradient colors={[`${POKEMON_TYPE_COLORS[`${pokemon.types?.[0].type.name}`]}`,  'transparent']}>
             <FirstSection>
             <PokeNameContainer>
               <PokeName>{pokemon.name}</PokeName>
@@ -75,8 +83,9 @@ const Pokemon = ({route}) => {
             speed={pokemon.stats?.[5]?.base_stat}
             total={pokemon.stats?.map((base) => (base.base_stat)).reduce((prev, curr) => prev + curr)}
             move={pokemon?.moves?.map((move) => (<Text>{move.move?.name}</Text>))}
-          />
+            />
         </SecondSection>
+            </>)}
     </Container>
   )
 }
