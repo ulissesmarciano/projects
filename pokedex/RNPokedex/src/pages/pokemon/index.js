@@ -39,11 +39,12 @@ const Pokemon = ({route}) => {
     getPokemon(id)
     getGender(id)
   }, [])
+  
   //console.log(pokemon)
   return (
     <Container>
       <StatusBar barStyle="light-content"/>
-          <LinearGradient colors={[POKEMON_TYPE_COLORS[`${pokemon.types?.[0].type.name}`],  'transparent']}>
+          <LinearGradient colors={[`${POKEMON_TYPE_COLORS[`${pokemon.types?.[0].type.name}`]}`,  'transparent']}>
             <FirstSection>
             <PokeNameContainer>
               <PokeName>{pokemon.name}</PokeName>

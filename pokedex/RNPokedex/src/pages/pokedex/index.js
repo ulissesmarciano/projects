@@ -3,7 +3,7 @@ import { FlatList, SafeAreaView, StatusBar, ActivityIndicator } from 'react-nati
 import axios from 'axios'
 
 import { Pokelist, Type, Loader } from './styles'
-import { POKEMON_TYPE_COLORS } from '../../util/constants'
+import { POKEMON_TYPE_COLORS, POKEMON_TYPES } from '../../util/constants'
 
 import Header from '../../components/Header'
 import PokemonCard from '../../components/PokemonCard'
@@ -17,7 +17,7 @@ const Pokedex = ({navigation }) => {
     const [loading, setLoading] = useState(true)
     
     const getPokemons = () => {
-      var limit = 151
+      var limit = 15
       var endpoints = []
   
       for (var i = 1; i <= limit; i++){
@@ -32,7 +32,7 @@ const Pokedex = ({navigation }) => {
     }
 
     
-    const pokemonFilter = (name) => {
+    const pokemonNameFilter = (name) => {
       var filteredPokemons = [];
       if (name === ""){
         getPokemons()
@@ -44,15 +44,13 @@ const Pokedex = ({navigation }) => {
       }
       setPokemons(filteredPokemons)
     }
-
+    console.log(pokemons.map((item) => item.data.types))
     //console.log(pokemons)
- 
   return (
     <SafeAreaView>
       <StatusBar barStyle="light-content" backgroundColor='#C01733' />
       <Header
-        onChangeText={pokemonFilter}
-        
+        onChangeText={pokemonNameFilter}
         />
         <Pokelist>
         {loading ? (

@@ -4,7 +4,7 @@ import { POKEMON_TYPES } from '../../util/constants'
 
 import { SidebarContainer, OptionsContainer, Title, Link, LinkText, TypeLink, ItemName } from './styles'
 
-const SideBar = ({filterAlphabet, filterEgg}) => {
+const SideBar = ({filterAlphabet, filterEgg, filterType}) => {
   const [showType, setShowType] = useState(true)
   const changeButtonType = () => {
     setShowType(false)
@@ -19,12 +19,12 @@ const SideBar = ({filterAlphabet, filterEgg}) => {
         <Title>Order by</Title>
         <Link onPress={filterAlphabet}><LinkText>Alphabet</LinkText></Link>
         <Link onPress={changeButtonType}>
-          {showType ? <LinkText>Type</LinkText> : 
+          {showType ? <LinkText >Type</LinkText> : 
             <FlatList
             data={pokeData}
             numColumns={3}
             renderItem={(item) =>
-                <TypeLink >
+                <TypeLink onPress={filterType}>
                   <ItemName>{item.item}</ItemName>
                 </TypeLink>
             }
