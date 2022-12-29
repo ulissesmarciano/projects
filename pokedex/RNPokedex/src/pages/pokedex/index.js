@@ -17,7 +17,7 @@ const Pokedex = ({navigation }) => {
     const [loading, setLoading] = useState(true)
     
     const getPokemons = () => {
-      var limit = 15
+      var limit = 400
       var endpoints = []
   
       for (var i = 1; i <= limit; i++){

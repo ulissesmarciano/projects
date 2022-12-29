@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/splash/adaptive-icon.png",
         "backgroundColor": "#C01733"
-      }
+      },
+      "package": "com.ulissesmarciano.RNPokedex"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "74809bc5-2506-49f4-88e7-04dc1c67a017"
+      }
     }
   }
 }

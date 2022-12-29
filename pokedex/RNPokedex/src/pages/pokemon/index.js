@@ -10,6 +10,7 @@ import TabList from '../../components/TabList'
 import { Container, Loader, FirstSection, PokeNameContainer, PokeName, PokeId, PokemonImageContainer, PokemonImage, TypesContainer, Type, SecondSection } from './styles'
 
 const Pokemon = ({route}) => {
+  
   const  id  = route.params
   const [pokemon, setPokemon] = useState([])
   const [gender, setGender] = useState([])
