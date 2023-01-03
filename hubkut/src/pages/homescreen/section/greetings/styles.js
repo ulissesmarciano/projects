@@ -1,11 +1,19 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  margin: 1rem 0.5rem;
-  padding: 1rem;
+  align-self: center;
+  margin: 1rem auto 0;
+  padding: 1.5rem 1rem;
+  max-width: 768px;
+  //margin: auto;
+
+
 
   background-color: #fff;
   border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
 `
 
 export const GreetingContainer = styled.div`

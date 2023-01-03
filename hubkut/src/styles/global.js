@@ -7,8 +7,9 @@ export default createGlobalStyle`
         box-sizing:  border-box;
         font-family: Roboto;
     }
-
     body{
         background-color: #D9E6F6;
+        height: 100%;
+        
     }
 `
