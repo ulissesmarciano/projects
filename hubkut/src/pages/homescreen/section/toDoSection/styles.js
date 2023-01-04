@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   margin: 1rem auto 0;
   padding: 1.5rem 1rem;
-  max-width: 1000px;
+  width: 100%;
 
 
   border-radius: 4px;
@@ -19,5 +19,8 @@ export const Container = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
+  @media(min-width: 1201px){
+    margin-right: 2rem;
+  }
 `

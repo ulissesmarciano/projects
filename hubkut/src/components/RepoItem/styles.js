@@ -7,18 +7,21 @@ export const ItemContainer = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
   background-color: #D9E6F6;
   
 `
 
 export const TitleContainer = styled.div`
-    img{
-      height: 1rem;
-      margin-right: 0.1rem;
-    }
+
+  img{
+    height: 1rem;
+    margin-right: 0.1rem;
+  }
     
   div{
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
 
@@ -27,6 +30,7 @@ export const TitleContainer = styled.div`
   h3{
     color: #308BC5;
     font-size: 1rem;
+    margin: 0;
   }
 
   h4{

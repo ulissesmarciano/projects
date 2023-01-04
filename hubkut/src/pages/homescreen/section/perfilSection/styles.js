@@ -4,7 +4,8 @@ export const Container = styled.div`
   display: none;
 
   @media (min-width: 1025px){
-    max-width: 14rem;
+    height: 40rem;
+    width: 14rem;
     margin: 1rem 0.5rem;
     padding: 1.5rem 0;
 

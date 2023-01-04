@@ -10,6 +10,10 @@ export default createGlobalStyle`
     body{
         background-color: #D9E6F6;
         height: 100%;
-        
+    
+    }
+
+    a{
+        text-decoration: none;
     }
 `
