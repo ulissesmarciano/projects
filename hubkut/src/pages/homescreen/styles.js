@@ -8,5 +8,5 @@ export const FullContainer = styled.div`
 
   display: flex;
   justify-content: center;
-
+  
 `

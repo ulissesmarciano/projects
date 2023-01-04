@@ -4,9 +4,9 @@ export const Container = styled.div`
   display: none;
 
   @media (min-width: 1025px){
-    margin: 1rem;
+    min-width: 15rem;
+    margin: 1rem 0.5rem;
     padding: 1.5rem 0;
-    max-width: 768px;
 
 
     border-radius: 4px;

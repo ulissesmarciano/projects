@@ -2,8 +2,7 @@ import styled, {css} from 'styled-components'
 
 export const ButtonContainer = styled.a`
   height: 2.5rem;
-  min-width: 10rem;
-  margin-left: 1rem;
+  max-width: 10rem;
   padding: 0.5rem;
 
   border-radius: 10px;
@@ -16,6 +15,8 @@ export const ButtonContainer = styled.a`
 
   p{
     color: #fff;
+    font-size: 0.8rem;
+    
   }
 
   ${({variant}) => variant !== "primary" && css`

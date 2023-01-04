@@ -1,14 +1,23 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   height: 3rem;
   padding: 0 0.5rem;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   background-color: #308BC5;
+`
+
+export const Container = styled.div`
+    max-width: 66.5rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+
 `
 
 export const IconContainer = styled.div`

@@ -12,7 +12,7 @@ const ToDoSection = () => {
         <Button title='Criar repositório'/>
         <Button variant={!'primary'} title='Clonar Repositório'/>
         <Button variant={!'primary'}  title='Suas Estrelas'/>
-        <Button variant={!'primary'} />
+        <Button variant={!'primary'} title='Suas Estrelas'/>
       </ButtonContainer>
     </Container>
   )
