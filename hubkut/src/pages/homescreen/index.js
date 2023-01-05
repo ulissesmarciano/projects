@@ -13,7 +13,13 @@ const HomeScreen = () => {
   <FullContainer>
     <PerfilSection/>
     <PortableContainer>
-      <Greetings />
+      <Greetings 
+      name="Ulisses"
+      toRepo="/repositories"
+      toStarred="/starreds"
+      toFollowers="/followers"
+      toFollowing="/following"
+      />
       <ToDoSection/>
       <LastRepoSection/>
     </PortableContainer>

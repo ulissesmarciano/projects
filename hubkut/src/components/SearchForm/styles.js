@@ -27,5 +27,10 @@ export const Container = styled.div`
     ::placeholder{
       color: #FFFFFF90;
     }
+
+    :focus {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+    }
   }
 `

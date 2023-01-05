@@ -23,13 +23,13 @@ const Header = () => {
           <MenuWrapper>
             <LinksContainer>
               <LinkItem title="Início" href="#" />
-              <LinkItem title="Pull Requests" href="#" variant="primary" />
-              <LinkItem title="Issues" href="#" variant="primary" />
-              <LinkItem title="Marketplace" href="#" variant="primary" />
-              <LinkItem title="Explore" href="#" variant="primary" />
+              <LinkItem title="Pull Requests" href="https://github.com/pulls" variant="primary" target='blank' />
+              <LinkItem title="Issues" href="https://github.com/issues" variant="primary" target='blank' />
+              <LinkItem title="Marketplace" href="https://github.com/marketplace" variant="primary" target='blank' />
+              <LinkItem title="Explore" href="https://github.com/explore" variant="primary" target='blank' />
             </LinksContainer>
             <SearchContainer>
-              <LinkItem title="Sair" href="#" variant="primary" />
+              <LinkItem title="Sair" href="/" variant="primary" />
               <SearchForm />
             </SearchContainer>
           </MenuWrapper>

@@ -22,7 +22,7 @@ const PerfilSection = () => {
       <InfoContainer>
         <PerfilItem src={CompanyIcon} title='@Estágio' />
         <PerfilItem src={PinIcon} title='Campinas/SP' />
-        <PerfilItem src={MailIcon} title='ulissesmkt2104@gmail.com' />
+        <PerfilItem src={MailIcon} title='ulissesmkt2104@gmail.com' href="mailto:ulissesmkt2104@gmail.com" target="blank"/>
         <PerfilItem src={LinkIcon} title='https://ulissesmarciano.github.io/portfolio-ulisses' />
         <PerfilItem src={TwitterIcon} title='@ulissesmarciano' />
       </InfoContainer>

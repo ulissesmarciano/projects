@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { Container, TitleContainer } from './styles'
 
@@ -28,7 +29,7 @@ const FollowingSection = () => {
 
             borderRadius: '6px',
           }}
-        ><div><p>user</p></div></li>
+        ><Link to='/'><div><p>user</p></div></Link></li>
          <li
           style={{
             backgroundImage: `url(${User})`,
@@ -110,9 +111,9 @@ const FollowingSection = () => {
           }}
         ><div><p>user</p></div></li>
       </ul>
-      <a href='/following'>
+      <Link to='/following'>
         <h5>Ver todos</h5>
-      </a>
+      </Link>
     </Container>
   )
 }

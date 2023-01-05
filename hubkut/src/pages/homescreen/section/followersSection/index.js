@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { Container, TitleContainer } from './styles'
 
 export const User = 'https://avatars.githubusercontent.com/u/104742158?s=400&u=b793765b9ab0c8f5bec5e2c7580678cac6bce511&v=4'
@@ -28,7 +30,7 @@ const FollowersSection = () => {
 
             borderRadius: '6px',
           }}
-        ><div><p>user</p></div></li>
+        ><Link to='/'><div><p>user</p></div></Link></li>
          <li
           style={{
             backgroundImage: `url(${User})`,
@@ -110,9 +112,9 @@ const FollowersSection = () => {
           }}
         ><div><p>user</p></div></li>
       </ul>
-      <a href='/followers'>
+      <Link to='/followers'>
         <h5>Ver todos</h5>
-      </a>
+      </Link>
     </Container>
   )
 }

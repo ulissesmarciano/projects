@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import { Container, GreetingContainer, InfoDataContainer, InfoContainer, ItemCountContainer } from './styles'
 
 import RepositorieIcon from '../../../../assets/icons/repositories-icon.png'
@@ -7,11 +9,11 @@ import FollowersIcon from '../../../../assets/icons/user-icon.png'
 import FollowingIcon from '../../../../assets/icons/following-icon.png'
 
 
-const Greetings = () => {
+const Greetings = ({toRepo, toStarred, toFollowing, toFollowers, name}) => {
   return (
     <Container>
         <GreetingContainer>
-          <h2>Bem-vindo(a), Ulisses</h2>
+          <h2>Bem-vindo(a), {name}</h2>
           <p><strong>Sorte de hoje: </strong>Cada sonho que você deixa pra trás, é um pedaço do seu futuro que deixa de existir.</p>
         </GreetingContainer>
         <InfoDataContainer>
@@ -19,28 +21,28 @@ const Greetings = () => {
             <h4>Repositórios</h4>
             <ItemCountContainer>
               <img src={RepositorieIcon} alt='icone'/>
-              <p>64</p>
+              <Link to={toRepo}><p>64</p></Link>
             </ItemCountContainer>
           </InfoContainer>
           <InfoContainer>
             <h4>Favoritos</h4>
             <ItemCountContainer>
               <img src={StarredIcon} alt='icone'/>
-              <p>1.4k</p>
+              <Link to={toStarred}><p>1.4k</p></Link>
             </ItemCountContainer>
           </InfoContainer>
           <InfoContainer>
             <h4>Seguidores</h4>
             <ItemCountContainer>
               <img src={FollowersIcon} alt='icone'/>
-              <p>1.1k</p>
+              <Link to={toFollowers}><p>1.1k</p></Link>
             </ItemCountContainer>
           </InfoContainer>
           <InfoContainer>
             <h4>Seguindo</h4>
             <ItemCountContainer>
               <img src={FollowingIcon} alt='icone'/>
-              <p>216</p>
+              <Link to={toFollowing}><p>216</p></Link>
             </ItemCountContainer>
           </InfoContainer>
         </InfoDataContainer>
