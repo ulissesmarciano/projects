@@ -38,7 +38,11 @@ const HomeScreen = () => {
       />
     </PortableContainer>
     <div>
-      <FollowingSection />
+      <FollowingSection 
+        numOfFollwing="216"
+        avatarUser={PerfilImage}
+        userName="user"
+      />
       <FollowersSection />
     </div>
   </FullContainer>
