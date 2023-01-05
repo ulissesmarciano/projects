@@ -21,7 +21,9 @@ const HomeScreen = () => {
       toFollowing="/following"
       />
       <ToDoSection/>
-      <LastRepoSection/>
+      <LastRepoSection
+        href="/repositories"
+      />
     </PortableContainer>
     <div>
       <FollowingSection />
