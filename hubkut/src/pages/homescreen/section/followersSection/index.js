@@ -7,17 +7,17 @@ import { Container, TitleContainer } from './styles'
 export const User = 'https://avatars.githubusercontent.com/u/104742158?s=400&u=b793765b9ab0c8f5bec5e2c7580678cac6bce511&v=4'
 
 
-const FollowersSection = () => {
+const FollowersSection = ({numOfFollwing, avatarUser, userName}) => {
   return (
     <Container>
       <TitleContainer>
         <h3>Seguidores</h3>
-        <p>(1.1k)</p>
+        <p>({numOfFollwing})</p>
       </TitleContainer>
       <ul>
       <li
           style={{
-            backgroundImage: `url(${User})`,
+            backgroundImage: `url(${avatarUser})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: '100px',
@@ -30,7 +30,7 @@ const FollowersSection = () => {
 
             borderRadius: '6px',
           }}
-        ><Link to='/'><div><p>user</p></div></Link></li>
+        ><Link to='/'><div><p>{userName}</p></div></Link></li>
       </ul>
       <Link to='/followers'>
         <h5>Ver todos</h5>

@@ -43,7 +43,11 @@ const HomeScreen = () => {
         avatarUser={PerfilImage}
         userName="user"
       />
-      <FollowersSection />
+      <FollowersSection 
+        numOfFollwing="1.1k"
+        avatarUser={PerfilImage}
+        userName="user"
+      />
     </div>
   </FullContainer>
   )
