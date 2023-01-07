@@ -11,6 +11,7 @@ import FollowingScreen from "./pages/followingscreen";
 import FollowersScreen from "./pages/followwerscreen";
 import StarredScreen from "./pages/starredscreen";
 import RepositorieScreen from "./pages/repositoriesscreen";
+import PerfilScreen from "./pages/perfilscreen";
 
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
                 <Route path="/home" element={<>
                     <Header/>
                     <HomeScreen/>
+                </>}/>
+                <Route path="/perfil" element={<>
+                    <Header/>
+                    <PerfilScreen/>
                 </>}/>
                 <Route path="/following" element={<>
                     <Header/>

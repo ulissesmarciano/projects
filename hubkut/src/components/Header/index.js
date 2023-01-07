@@ -22,7 +22,7 @@ const Header = () => {
           </SidebarButtonContainer>
           <MenuWrapper>
             <LinksContainer>
-              <LinkItem title="Início" href="#" />
+              <LinkItem title="Início" href="/home" />
               <LinkItem title="Pull Requests" href="https://github.com/pulls" variant="primary" target='blank' />
               <LinkItem title="Issues" href="https://github.com/issues" variant="primary" target='blank' />
               <LinkItem title="Marketplace" href="https://github.com/marketplace" variant="primary" target='blank' />
