@@ -13,25 +13,12 @@ const RepositorieScreen = () => {
       </div>
       <RepositorieContainer>
         <li>
-          <RepoPageItem />
-        </li>
-        <li>
-          <RepoPageItem />
-        </li>
-        <li>
-          <RepoPageItem />
-        </li>
-        <li>
-          <RepoPageItem />
-        </li>
-        <li>
-          <RepoPageItem />
-        </li>
-        <li>
-          <RepoPageItem />
-        </li>
-        <li>
-          <RepoPageItem />
+          <RepoPageItem 
+          to=''
+          title='decolatech3-dio-curso-introducao-ao-javascript'
+          description='Repositório sobre o curso de introdução ao JavaScript'
+          language='JavaScript'
+          />
         </li>
       </RepositorieContainer>
     </Container>

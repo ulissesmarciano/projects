@@ -2,18 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, InfoContainer } from './styles'
 
-const RepoPageItem = () => {
+const RepoPageItem = ({ to, title, description, language }) => {
   return (
-    <Link>
+    <Link to={to}>
       <Container>
           <InfoContainer>
             <div>
-              <h3>decolatech3-dio-curso-introducao-ao-javascript</h3>
-              <p>Repositório sobre o curso de introdução ao JavaScript</p>
+              <h3>{title}</h3>
+              <p>{description}</p>
             </div>
             <ul>
-              <li>HTML</li>
-              <li>JavaScript</li>
+              <li>{language}</li>
             </ul>
           </InfoContainer>
           <div>

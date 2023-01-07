@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   padding: 1rem;
-  margin: 1rem auto;
+  margin: 1rem;
   height: 100vh;
-  max-width: 80%;
+  
   
   display: flex;
   flex-direction: column;
@@ -16,6 +16,11 @@ export const Container = styled.div`
 
     display: flex;
     justify-content: flex-end;
+  }
+
+  @media (min-width: 1440px){
+    max-width: 80%;
+    margin: 1rem auto;
   }
 `
 
