@@ -26,7 +26,9 @@ const Login = () => {
         <UserLoginContainer>
           <p>Acesse o hubkut com sua conta</p>
           <div className='userInputContainer'>Usuário:<span/><UserForm/></div>
-          <UserButton to="/home" />
+          <span className='buttonSpace'>
+            <UserButton to="/home" />
+          </span>
         </UserLoginContainer>
         <UserLogonContainer>
           <p>Ainda não é membro?</p>

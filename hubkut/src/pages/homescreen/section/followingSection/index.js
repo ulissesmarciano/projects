@@ -27,7 +27,7 @@ const FollowingSection = ({numOfFollwing, avatarUser, userName}) => {
 
             borderRadius: '6px',
           }}
-        ><Link to='/'><div><p>{userName}</p></div></Link></li>
+        ><Link to='/perfil'><div><p>{userName}</p></div></Link></li>
       </ul>
       <Link to='/following'>
         <h5>Ver todos</h5>

@@ -99,7 +99,7 @@ export const UserLoginContainer = styled.div`
   background-color: #e8eefa;
 
   .userInputContainer{
-    margin: 2rem 0;
+    margin: 2rem 0 1rem -4rem;
 
     display: flex;
     align-items: center;
@@ -107,6 +107,10 @@ export const UserLoginContainer = styled.div`
 
   span {
     margin-left: 1rem;
+  }
+
+  .buttonSpace {
+    margin-left: -7rem;
   }
 
   @media(min-width: 1200px){
