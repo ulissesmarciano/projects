@@ -15,15 +15,31 @@ import RepositorieScreen from "./pages/repositoriesscreen";
 
 function App() {
     return (<>
-        <Header />
         <Router>
             <Routes>
-                <Route path="/" element={<HomeScreen/>} />
-                <Route path="/following" element={<FollowingScreen/>} />
-                <Route path="/followers" element={<FollowersScreen/>} />
-                <Route path="/starreds" element={<StarredScreen/>} />
-                <Route path="repositories" element={<RepositorieScreen/>} />
-                <Route path="/login" element={<Login/>} />
+                <Route path="/" element={<>
+                    <Login/>
+                </>}/>
+                <Route path="/home" element={<>
+                    <Header/>
+                    <HomeScreen/>
+                </>}/>
+                <Route path="/following" element={<>
+                    <Header/>
+                    <FollowingScreen/>
+                </>} />
+                <Route path="/followers" element={<>
+                    <Header/>
+                    <FollowersScreen/>
+                </>} />
+                <Route path="/starreds" element={<>
+                    <Header/>
+                    <StarredScreen/>
+                </>} />
+                <Route path="repositories" element={<>
+                    <Header/>
+                    <RepositorieScreen/>
+                </>} />
             </Routes>
         </Router>
 </>);}

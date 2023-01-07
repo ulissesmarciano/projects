@@ -14,10 +14,12 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   max-width: 93rem;
   margin: 0 1rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 1;
+  
 `
 
 export const IconContainer = styled.div`
@@ -30,9 +32,24 @@ export const IconContainer = styled.div`
   img{
     height: .8rem;
   }
+
 `
 
 export const SidebarButtonContainer = styled.div`
+  position: absolute;
+  padding: 0.5rem 1.5rem;
+
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100%;
+  
+
+  display: flex;
+  justify-content: flex-end;
+
+
   @media (min-width: 769px){
     display: none;
   }
@@ -58,10 +75,14 @@ export const LinksContainer = styled.div`
 `
 
 export const SearchContainer = styled.div`
-  padding: 0 1rem;
+  display: none;
+
+  @media (min-width: 769px){
+    padding: 0 1rem;
 
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `

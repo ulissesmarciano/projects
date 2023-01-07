@@ -1,12 +1,36 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+import { FullContainer, IconContainer, UserFormContainer, PhraseContainer, UserLoginContainer, UserLogonContainer, LoginContainer } from './styles'
+
+import HubkutIcon from '../../assets/icons/hubkut-icon.png'
+import UserForm from '../../components/UserForm'
+import UserButton from '../../components/UserButton'
 
 const Login = () => {
   return (
-    <div>
-      Login
-      <Link to="/">voltar</Link>
-    </div>
+    <FullContainer>
+      <IconContainer>
+        <img className='logotype' src={HubkutIcon} alt="logotipo da plataforma"/>
+        <PhraseContainer>
+          <p><span>Conecte-se</span> aos seus amigos e familiares usando recados e mensagens instantâneas</p>
+          <p><span>Conheça</span> novas pessoas através de amigos de seus amigos e comunidades</p>
+          <p><span>Compartilhe</span> seus repositórios, fotos e paixões em um só lugar</p>
+        </PhraseContainer>
+        <UserFormContainer>
+          Usuário:
+          <UserForm/>
+          <UserButton to="/home" />
+        </UserFormContainer>
+      </IconContainer>
+      <LoginContainer>
+        <UserLoginContainer>
+          <p>Acesse o hubkut com sua conta</p>
+          <div className='userInputContainer'>Usuário:<span/><UserForm/></div>
+          <UserButton />
+        </UserLoginContainer>
+        <UserLogonContainer>inscrição</UserLogonContainer>
+      </LoginContainer>
+    </FullContainer>
   )
 }
 

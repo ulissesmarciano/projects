@@ -30,7 +30,7 @@ const Header = () => {
             </LinksContainer>
             <SearchContainer>
               <LinkItem title="Sair" href="/" variant="primary" />
-              <SearchForm />
+              <SearchForm variant="primary"/>
             </SearchContainer>
           </MenuWrapper>
       </Container>
