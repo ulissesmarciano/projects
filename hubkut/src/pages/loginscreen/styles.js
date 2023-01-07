@@ -116,7 +116,7 @@ export const UserLoginContainer = styled.div`
 `
 
 export const UserLogonContainer = styled.div`
-padding: 1rem;  
+  padding: 1rem;  
   margin: 1rem;
   height: 50%;
   width: 20rem;
@@ -133,9 +133,21 @@ padding: 1rem;
     margin-left: 1rem;
   }
 
+  P{
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #2463e0;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   @media(min-width: 1200px){
     width: 25rem;
     height: 50%;
   }
+
+
 `
   

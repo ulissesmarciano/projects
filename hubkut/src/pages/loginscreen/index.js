@@ -28,7 +28,10 @@ const Login = () => {
           <div className='userInputContainer'>Usuário:<span/><UserForm/></div>
           <UserButton />
         </UserLoginContainer>
-        <UserLogonContainer>inscrição</UserLogonContainer>
+        <UserLogonContainer>
+          <p>Ainda não é membro?</p>
+          <a href='https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home' target="blank">ENTRAR JÁ</a>
+        </UserLogonContainer>
       </LoginContainer>
     </FullContainer>
   )
