@@ -13,11 +13,13 @@ import MailIcon from '../../../../assets/icons/mail-icon.png'
 const PerfilSection = ({src, username, workname, companyName, pinName, mailHref, mailName }) => {
   return (
     <Container>
-      <img className='avatar' src={src} alt='foto de perfil'/>
-      <hr/>
-      <h2>{username}</h2>
-      <p>{workname}</p>
-      <hr/>
+        <img className='avatar' src={src} alt='foto de perfil'/>
+      <div className='titleAndDescritpionContainer'>
+        <hr/>
+        <h2>{username}</h2>
+        <p>{workname}</p>
+        <hr/>
+      </div>
       <InfoContainer>
         <PerfilItem src={CompanyIcon} title={companyName} />
         <PerfilItem src={PinIcon} title={pinName} />

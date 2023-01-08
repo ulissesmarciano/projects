@@ -1,9 +1,7 @@
 import React from 'react'
 import { PortableContainer, FullContainer } from './styles'
 
-import Greetings from './section/greetings'
 import LastRepoSection from './section/lastRepoSection'
-import ToDoSection from './section/toDoSection'
 import PerfilSection from './section/perfilSection'
 import FollowingSection from './section/followingSection'
 import FollowersSection from './section/followersSection'
@@ -23,14 +21,6 @@ const PerfilScreen = () => {
       mailHref={`mailto:ulissesmkt2104@gmail.com`}
     />
     <PortableContainer>
-      <Greetings 
-      name="Ulisses"
-      toRepo="/repositories"
-      toStarred="/starreds"
-      toFollowers="/followers"
-      toFollowing="/following"
-      />
-      <ToDoSection/>
       <LastRepoSection
         href="/repositories"
         urlRepo="ulissesmarciano/hubkut"

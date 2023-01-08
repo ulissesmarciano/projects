@@ -1,7 +1,35 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  display: none;
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem;
+  
+  display: flex;
+  justify-content: flex-start;
+
+  background-color: #fff;
+  border-radius: 4px;
+
+  .titleAndDescritpionContainer{
+    margin-left: 3rem;
+    margin-right: 5rem;
+    h2{
+      color: #308BC5;
+    }
+
+  }
+
+  .avatar {
+    height: 10rem;
+    width: 10rem;
+
+    border-radius: 50rem;
+  }
+
+  hr {
+    display: none;
+  }
 
   @media (min-width: 1025px){
     height: 40rem;
@@ -15,7 +43,6 @@ export const Container = styled.div`
 
 
     border-radius: 4px;
-    background-color: #fff;
     display: flex;
 
     .avatar {
@@ -27,6 +54,8 @@ export const Container = styled.div`
     }
 
     hr {
+      display: flex;
+
       height: 1px;
       width: 90%;
       margin: 0 auto 0.5rem;
@@ -35,29 +64,32 @@ export const Container = styled.div`
       border: none;
     }
 
-    h2{
-      margin: 0 0 0.5rem 0.5rem;
+    .titleAndDescritpionContainer{
+      margin: 0;
 
-      color: #308BC5;
-      font-size: 1.2rem;
+      h2{
+        margin: 0 0 0.5rem 0.5rem;
+        font-size: 1.2rem;
+      }
+  
+      p {
+        color: #AAA;
+        font-weight: 500;
+        margin: 0 0 0.5rem 0.5rem;
+      }
+
     }
 
-    p {
-      color: #AAA;
-      font-weight: 500;
-      margin: 0 0 0.5rem 0.5rem;
-    }
+
   }
 
 `
 
 export const InfoContainer = styled.div`
   display: none;
-
-  @media (min-width: 1025px){
+  @media (min-width: 700px){
     display: flex;
     flex-direction: column;
   }
-
 
 `
