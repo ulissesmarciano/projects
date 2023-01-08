@@ -1,15 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Container, RepositorieContainer } from './styles'
 
-import { Container } from './styles'
+import RepoPageItem from '../../components/RepoPageItem'
 
-const StarredScreen = () => {
+
+const RepositorieScreen = () => {
   return (
     <Container>
-      StarredScreen
-      <Link to="/">voltar</Link>
+      <div className='backLink'>
+        <Link to='/home' >voltar</Link>
+      </div>
+      <RepositorieContainer>
+        <li>
+          <RepoPageItem 
+          to=''
+          title='decolatech3-dio-curso-introducao-ao-javascript'
+          description='Repositório sobre o curso de introdução ao JavaScript'
+          language='JavaScript'
+          />
+        </li>
+      </RepositorieContainer>
     </Container>
   )
 }
 
-export default StarredScreen
+export default RepositorieScreen
