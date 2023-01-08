@@ -13,6 +13,7 @@ export const AvatarContainer = styled.div`
 
   img {
     height: 6rem;
+    margin-right: 0.8rem;
 
     border-radius: 8px;
   }
@@ -46,7 +47,6 @@ export const TitleContainer = styled.div`
 `
 
 export const EmployContainer = styled.div`
-  margin-left: 0.5rem;
 
   display: flex;
   justify-content: flex-start;

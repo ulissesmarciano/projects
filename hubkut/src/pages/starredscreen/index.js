@@ -5,7 +5,7 @@ import { Container, RepositorieContainer } from './styles'
 import RepoPageItem from '../../components/RepoPageItem'
 
 
-const RepositorieScreen = () => {
+const StarredScreen = () => {
   return (
     <Container>
       <div className='backLink'>
@@ -25,4 +25,4 @@ const RepositorieScreen = () => {
   )
 }
 
-export default RepositorieScreen
+export default StarredScreen
