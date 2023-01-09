@@ -15,6 +15,7 @@ const Pokemon = () => {
   const [loading, setLoading] = useState(true)
 
   const { id } = useParams();
+  //console.log(id)
 
   const getPokemon = async (id) => {
     const details = await getPokemonData(id);
@@ -31,6 +32,7 @@ const Pokemon = () => {
   const getPokemonData = async (id) => {
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
     return res
+    //console.log('Ulisses', res)
   }
 
   const getPokemonGender = async (id) =>{

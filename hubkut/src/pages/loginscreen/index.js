@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import { FullContainer, IconContainer, UserFormContainer, PhraseContainer, UserLoginContainer, UserLogonContainer, LoginContainer } from './styles'
 
 import HubkutIcon from '../../assets/icons/hubkut-icon.png'
@@ -7,6 +6,7 @@ import UserForm from '../../components/UserForm'
 import UserButton from '../../components/UserButton'
 
 const Login = () => {
+  const [getUser, setGetUser] = useState('')
 
   return (
     <FullContainer>
@@ -26,9 +26,15 @@ const Login = () => {
       <LoginContainer>
         <UserLoginContainer>
           <p>Acesse o hubkut com sua conta</p>
-          <div className='userInputContainer'>Usuário:<span/><UserForm/></div>
+          <div className='userInputContainer'>
+            Usuário:
+          <span/>
+            <UserForm
+              onChange={(e) => setGetUser(e.target.value)}
+            />
+          </div>
           <span className='buttonSpace'>
-            <UserButton to="/home" />
+            <UserButton to={`/home/${getUser}`} />
           </span>
         </UserLoginContainer>
         <UserLogonContainer>
