@@ -10,7 +10,7 @@ import LinkIcon from '../../../../assets/icons/link-icon.png'
 import TwitterIcon from '../../../../assets/icons/twitter-icon.png'
 
 
-const PerfilSection = ({src, username, workname, companyName, pinName, mailHref, mailName, twitterHref, twitterUsername }) => {
+const PerfilSection = ({src, username, workname, companyName, pinName, mailHref, mailName, twitterHref, twitterUsername, portfolioLinkName, portfolioHref }) => {
   return (
     <Container>
       <img className='avatar' src={src} alt='foto de perfil'/>
@@ -22,7 +22,7 @@ const PerfilSection = ({src, username, workname, companyName, pinName, mailHref,
         <PerfilItem src={CompanyIcon} title={companyName} />
         <PerfilItem src={PinIcon} title={pinName} />
         <PerfilItem src={MailIcon} title={mailName} href={mailHref} target="blank"/>
-        <PerfilItem src={LinkIcon} title='https://ulissesmarciano.github.io/portfolio-ulisses' />
+        <PerfilItem src={LinkIcon} title={portfolioLinkName} href={portfolioHref}  target="blank"/>
         <PerfilItem src={TwitterIcon} title={twitterUsername} href={twitterHref} target="blank"/>
       </InfoContainer>
     </Container>

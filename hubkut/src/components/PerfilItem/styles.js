@@ -7,6 +7,8 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
 
+  word-break: break-all;
+
   a {
     font-size: 0.8rem;
     color: #308BC5;

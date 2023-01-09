@@ -40,13 +40,15 @@ const HomeScreen = () => {
   return (<>
   <FullContainer>
     <PerfilSection
-      src={PerfilImage}
+      src={user?.avatar_url}
       username={user?.name}
       workname={user?.bio}
       companyName={user?.company}
       pinName={user?.location}
       mailName={user?.email}
       mailHref={`mailto:${user?.email}`}
+      portfolioHref={`https://${user?.blog}`}
+      portfolioLinkName={user?.blog}
       twitterUsername={`@${user?.twitter_username}`}
       twitterHref={`http://twitter.com/${user?.twitter_username}`}
     />
