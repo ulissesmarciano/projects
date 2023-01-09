@@ -16,19 +16,40 @@ export const Container = styled.div`
     margin-right: 5rem;
     h2{
       color: #308BC5;
+      font-size: 1rem;
+    }
+
+    p{
+      font-size: 0.8rem;
     }
 
   }
 
   .avatar {
-    height: 10rem;
-    width: 10rem;
+    height: 7rem;
+    width: 7rem;
 
     border-radius: 50rem;
   }
 
   hr {
     display: none;
+  }
+
+  @media (min-width: 375px){
+    .titleAndDescritpionContainer{
+    margin-left: 3rem;
+    margin-right: 5rem;
+    h2{
+      color: #308BC5;
+      font-size: 1.5rem;
+    }
+
+    p{
+      font-size: 1rem;
+    }
+
+  }
   }
 
   @media (min-width: 1025px){
