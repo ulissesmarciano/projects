@@ -15,6 +15,11 @@ export const ItemContainer = styled.a`
 
 export const TitleContainer = styled.div`
 
+  .imageLinkOrientation {
+    display: flex;
+    align-items: center;
+  }
+
   img{
     height: 1rem;
     margin-right: 0.1rem;

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { PortableContainer, FullContainer } from './styles'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 
 import Greetings from './section/greetings'
@@ -8,8 +10,7 @@ import ToDoSection from './section/toDoSection'
 import PerfilSection from './section/perfilSection'
 import FollowingSection from './section/followingSection'
 import FollowersSection from './section/followersSection'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
+import ItemRepo from '../../components/RepoItem'
 
 const PerfilImage = 'https://avatars.githubusercontent.com/u/104742158?s=400&u=b793765b9ab0c8f5bec5e2c7580678cac6bce511&v=4'
 
@@ -17,7 +18,7 @@ const HomeScreen = () => {
   const [user, setUser] = useState()
   const [repos, setRepos] = useState([])
   const [starred, setStarred] = useState([])
-  console.log(user)
+  //console.log(user)
 
   const getUsername = useParams();
   const username = getUsername.user
@@ -38,7 +39,7 @@ const HomeScreen = () => {
   const getStarred = async (username) => {
     const details = await getStarredData(username)
     setStarred(details.data)
-    console.log(details.data)
+    //console.log(details.data)
   }
 
 
@@ -59,12 +60,14 @@ const HomeScreen = () => {
     return res
   }
 
+  //console.log(repos.map((data) => data))
+
   useEffect(() => {
     getUser(username)
     getRepos(username)
     getStarred(username)
   },[])
-  
+
   return (<>
   <FullContainer>
     <PerfilSection
@@ -94,9 +97,17 @@ const HomeScreen = () => {
       />
       <ToDoSection/>
       <LastRepoSection
-        href="/repositories"
-        urlRepo="ulissesmarciano/hubkut"
-        nameRepo="Github + Orkut"
+        sectionHref={`/repositories/${user?.login}`}
+        itemRepositorie={repos.map((data, index) => (
+        <li>
+          <ItemRepo 
+           urlRepo={data.full_name} 
+           nameRepo={data.description}
+           key={index}
+           href={`https://github.com/${user?.login}/${data.name}`}
+          />
+        </li>
+        )).slice(0, 5)}
       />
     </PortableContainer>
     <div>

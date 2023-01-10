@@ -12,5 +12,18 @@ export const Container = styled.div`
   h3{
     margin-bottom: 1rem;
   }
+
+  ul{
+    list-style: none;
+  }
+
+    .linkSection {
+      margin:1rem 0.5rem 0;
+    
+          color: #3096D3;
+          font-size: 1rem;
+          font-weight: 800;
+    }
+
 `
 

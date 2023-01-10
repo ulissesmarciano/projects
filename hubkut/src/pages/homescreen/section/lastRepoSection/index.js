@@ -1,15 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Container } from './styles'
 
-import ItemRepo from '../../../../components/RepoItem'
 
-const LastRepoSection = ({href, nameRepo, urlRepo}) => {
+const LastRepoSection = ({itemRepositorie, sectionHref}) => {
   return (
     <Container>
       <h3>Meus últimos repositórios:</h3>
-      <div>
-        <ItemRepo urlRepo={urlRepo} nameRepo={nameRepo} href={href}/>
-      </div>
+      <ul>
+        {itemRepositorie}
+      </ul>
+      <Link to={sectionHref}>
+        <p className='linkSection'>Ver todos</p>
+      </Link>
     </Container>
   )
 }
