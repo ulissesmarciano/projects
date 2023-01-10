@@ -69,7 +69,7 @@ export const Container = styled.div`
     .avatar {
       height: 10rem;
       width: 10rem;
-      margin: 0 auto 1rem;
+      margin: 0 auto 3rem;
 
       border-radius: 50rem;
     }
@@ -79,7 +79,7 @@ export const Container = styled.div`
 
       height: 1px;
       width: 90%;
-      margin: 0 auto 0.5rem;
+      margin: 0 auto 1rem;
 
       background-color: #CCC;
       border: none;
@@ -89,7 +89,7 @@ export const Container = styled.div`
       margin: 0;
 
       h2{
-        margin: 0 0 0.5rem 0.5rem;
+        margin: 0 0 1rem 0.5rem;
         font-size: 1.2rem;
       }
   

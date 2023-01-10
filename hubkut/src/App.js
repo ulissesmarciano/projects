@@ -25,7 +25,7 @@ function App() {
                     <Header/>
                     <HomeScreen/>
                 </>}/>
-                <Route path="/perfil" element={<>
+                <Route path="/perfil/:user" element={<>
                     <Header/>
                     <PerfilScreen/>
                 </>}/>

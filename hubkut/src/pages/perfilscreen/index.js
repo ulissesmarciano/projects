@@ -1,42 +1,148 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { PortableContainer, FullContainer } from './styles'
+import axios from 'axios'
+import {Link, useParams } from 'react-router-dom'
 
 import LastRepoSection from './section/lastRepoSection'
 import PerfilSection from './section/perfilSection'
 import FollowingSection from './section/followingSection'
 import FollowersSection from './section/followersSection'
+import ItemRepo from '../../components/RepoItem'
 
 const PerfilImage = 'https://avatars.githubusercontent.com/u/104742158?s=400&u=b793765b9ab0c8f5bec5e2c7580678cac6bce511&v=4'
 
 const PerfilScreen = () => {
+  const [user, setUser] = useState()
+  const [repos, setRepos] = useState([])
+  const [followers, setFollowers] = useState([])
+  const [following, setFollowing] = useState([])
+
+  const userParams = useParams()
+  const username = userParams.user
+
+  //======================================
+
+  const getUserData = async (username) => {
+    const res = await axios.get(`https://api.github.com/users/${username}`)
+    return res
+  }
+
+  const getReposData = async (username) => {
+    const res = await axios.get(`https://api.github.com/users/${username}/repos`)
+    return res
+  }
+
+  const getFollowingData = async (username) => {
+    const res = await axios.get(`https://api.github.com/users/${username}/following`)
+    return res
+  }
+
+  const getFollowersData = async (username) => {
+    const res = await axios.get(`https://api.github.com/users/${username}/followers`)
+    return res
+  }
+
+
+  //======================================
+
+  const getUser = async (username) => {
+    const details = await getUserData(username)
+    setUser(details.data)
+  }
+
+  const getRepos = async (username) => {
+    const details = await getReposData(username)
+    setRepos(details.data)
+  }
+
+  const getFollowing = async (username) => {
+    const details = await getFollowingData(username)
+    setFollowing(details.data)
+  }
+
+  const getFollowers = async (username) => {
+    const details = await getFollowersData(username)
+    setFollowers(details.data)
+  }
+
+  useEffect(() => {
+    getUser(username)
+    getRepos(username)
+    getFollowers(username)
+    getFollowing(username)
+  },[])
+
+  console.log(following)
   return (<>
   <FullContainer>
     <PerfilSection
-      src={PerfilImage}
-      username='Ulisses Marciano'
-      workname='Front-end developer'
-      companyName='@Estágio'
-      pinName='Campinas/SP'
-      mailName='ulissesmkt2104@gmail.com'
-      mailHref={`mailto:ulissesmkt2104@gmail.com`}
+      src={user?.avatar_url}
+      perfilName={user?.name}
+      companyName={user?.company}
+      pinName={user?.location}
+      mailName={user?.email}
+      mailHref={`mailto:${user?.email}`}
+      linkName={user?.blog}
     />
     <PortableContainer>
       <LastRepoSection
-        href="/repositories"
-        urlRepo="ulissesmarciano/hubkut"
-        nameRepo="Github + Orkut"
+        resume={user?.bio}
+        href={`/repositories/${user?.login}`}
+        itemRepo={repos.map((data, index) => (
+          <ItemRepo
+            key={index}
+            urlRepo={data.full_name}
+            nameRepo={data.description}
+          />
+        )).slice(0, 5)}
       />
     </PortableContainer>
     <div>
       <FollowingSection 
-        numOfFollwing="216"
-        avatarUser={PerfilImage}
-        userName="user"
+        numOfFollwing={user?.following}
+        perfilUser={following.map((data, index) => (
+          <li
+          key={index}
+          style={{
+            backgroundImage: `url(${data.avatar_url})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: '100px',
+            width:'80px',
+            height: '100px',
+  
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-end',
+
+            borderRadius: '6px',
+
+          }}
+        ><Link key={index} to={`/perfil/${data.login}`}><div><p className='username'>{data.login}</p></div></Link></li>
+        )).slice(0, 6)}
       />
       <FollowersSection 
         numOfFollwing="1.1k"
-        avatarUser={PerfilImage}
-        userName="user"
+        itemRepo={followers.map((data, index) => (
+          <li
+          key={index}
+          style={{
+            backgroundImage: `url(${data.avatar_url})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: '100px',
+            width:'80px',
+            height: '100px',
+  
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-end',
+
+            borderRadius: '6px',
+
+          }}
+        ><Link key={index} to={`/perfil/${data.login}`}><div><p className='username'>{data.login}</p></div></Link></li>
+        )).slice(0, 6)}
       />
     </div>
   </FullContainer>
