@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Container, TitleContainer } from './styles'
 
 
-const FollowingSection = ({numOfFollwing, avatarUser, userName}) => {
+const FollowingSection = ({numOfFollwing, avatarUser, userName, followingItem}) => {
   return (
     <Container>
       <TitleContainer>
@@ -12,6 +12,7 @@ const FollowingSection = ({numOfFollwing, avatarUser, userName}) => {
         <p>({numOfFollwing})</p>
       </TitleContainer>
       <ul>
+        {followingItem}
       <li
           style={{
             backgroundImage: `url(${avatarUser})`,
