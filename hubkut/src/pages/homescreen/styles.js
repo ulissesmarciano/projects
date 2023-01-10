@@ -12,5 +12,10 @@ export const FullContainer = styled.div`
   @media (min-width: 1201px){
     max-width: 150%;
   }
+
+  .username {
+    font-size: 11px;
+    font-weight: 500;
+  }
   
 `

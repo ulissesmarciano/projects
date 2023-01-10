@@ -6,17 +6,17 @@ import { Container, TitleContainer } from './styles'
 
 
 
-const FollowersSection = ({numOfFollwing, avatarUser, userName, followerItem}) => {
+const FollowersSection = ({numOfFollowers, toPageFollowers, followerItem}) => {
   return (
     <Container>
       <TitleContainer>
         <h3>Seguidores</h3>
-        <p>({numOfFollwing})</p>
+        <p>({numOfFollowers})</p>
       </TitleContainer>
       <ul>
         {followerItem}
       </ul>
-      <Link to='/followers'>
+      <Link to={toPageFollowers}>
         <h5>Ver todos</h5>
       </Link>
     </Container>

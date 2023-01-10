@@ -87,7 +87,8 @@ const HomeScreen = () => {
     return res
   }
 
-  console.log(following.map((data) => data))
+  //console.log(following.map((data) => data))
+  //console.log(user)
 
   //==================================================================
 
@@ -104,7 +105,6 @@ const HomeScreen = () => {
     <PerfilSection
       src={user?.avatar_url}
       username={user?.name}
-      workname={user?.bio}
       companyName={user?.company}
       pinName={user?.location}
       mailName={user?.email}
@@ -117,6 +117,7 @@ const HomeScreen = () => {
     <PortableContainer>
       <Greetings 
       name={user?.name}
+      resume={user?.bio}
       toRepo={`/repositories/${user?.login}`}
       repoNum={repos.length}
       toStarred={`/starreds/${user?.name}`}
@@ -130,11 +131,10 @@ const HomeScreen = () => {
       <LastRepoSection
         sectionHref={`/repositories/${user?.login}`}
         itemRepositorie={repos.map((data, index) => (
-        <li>
+        <li key={index}>
           <ItemRepo 
            urlRepo={data.full_name} 
            nameRepo={data.description}
-           key={index}
            href={`https://github.com/${user?.login}/${data.name}`}
           />
         </li>
@@ -143,11 +143,13 @@ const HomeScreen = () => {
     </PortableContainer>
     <div>
       <FollowingSection 
-        numOfFollwing="216"
-        followingItem={following.map((data) => (
+        numOfFollwing={user?.following}
+        toPageFollowing={`/following/${user?.login}`}
+        followingItem={following.map((data, index) => (
           <li
+          key={index}
           style={{
-            backgroundImage: `url(${PerfilImage})`,
+            backgroundImage: `url(${data.avatar_url})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: '100px',
@@ -159,16 +161,19 @@ const HomeScreen = () => {
             alignItems: 'flex-end',
 
             borderRadius: '6px',
+
           }}
-        ><Link to='/perfil'><div><p>teste</p></div></Link></li>
+        ><Link key={index} to={`/perfil/${data.login}`}><div><p className='username'>{data.login}</p></div></Link></li>
         )).slice(0, 6)}
       />
       <FollowersSection 
-        numOfFollwing="1.1k"
-        followerItem={followers.map((data) => (
+        numOfFollowers={user?.followers}
+        toPageFollowers={`/followers/${user?.login}`}
+        followerItem={followers.map((data, index) => (
           <li
+          key={index}
           style={{
-            backgroundImage: `url(${PerfilImage})`,
+            backgroundImage: `url(${data.avatar_url})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: '100px',
@@ -181,7 +186,7 @@ const HomeScreen = () => {
 
             borderRadius: '6px',
           }}
-        ><Link to='/perfil'><div><p>teste</p></div></Link></li>
+        ><Link to={`/perfil/${data.login}`}><div key={index}><p>{data.login}</p></div></Link></li>
         )).slice(0, 6)}
       />
     </div>

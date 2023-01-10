@@ -10,13 +10,11 @@ import LinkIcon from '../../../../assets/icons/link-icon.png'
 import TwitterIcon from '../../../../assets/icons/twitter-icon.png'
 
 
-const PerfilSection = ({src, username, workname, companyName, pinName, mailHref, mailName, twitterHref, twitterUsername, portfolioLinkName, portfolioHref }) => {
+const PerfilSection = ({src, username, companyName, pinName, mailHref, mailName, twitterHref, twitterUsername, portfolioLinkName, portfolioHref }) => {
   return (
     <Container>
       <img className='avatar' src={src} alt='foto de perfil'/>
-      <hr/>
       <h2>{username}</h2>
-      <p>{workname}</p>
       <hr/>
       <InfoContainer>
         <PerfilItem src={CompanyIcon} title={companyName} />

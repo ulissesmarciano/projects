@@ -31,7 +31,7 @@ export const Container = styled.div`
         justify-content: center;
         align-items: flex-end;
         
-        background: linear-gradient(0deg, #00000080, #00000000);
+        background: linear-gradient(0deg, #00000090, #00000000);
         border-radius: 6px;
 
           p{

@@ -9,12 +9,12 @@ import FollowersIcon from '../../../../assets/icons/user-icon.png'
 import FollowingIcon from '../../../../assets/icons/following-icon.png'
 
 
-const Greetings = ({toRepo, toStarred, toFollowing, toFollowers, name, repoNum, starredNum, followersNum, followingNum}) => {
+const Greetings = ({toRepo, toStarred, toFollowing, toFollowers, name, repoNum, starredNum, followersNum, followingNum, resume}) => {
   return (
     <Container>
         <GreetingContainer>
           <h2>Bem-vindo(a), {name}</h2>
-          <p><strong>Sorte de hoje: </strong>Cada sonho que você deixa pra trás, é um pedaço do seu futuro que deixa de existir.</p>
+          <p>{resume}</p>
         </GreetingContainer>
         <InfoDataContainer>
           <InfoContainer>

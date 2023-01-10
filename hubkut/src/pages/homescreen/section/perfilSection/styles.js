@@ -21,7 +21,7 @@ export const Container = styled.div`
     .avatar {
       height: 10rem;
       width: 10rem;
-      margin: 0 auto 1rem;
+      margin: 0 auto 3rem;
 
       border-radius: 50rem;
     }
@@ -36,7 +36,7 @@ export const Container = styled.div`
     }
 
     h2{
-      margin: 0 0 0.5rem 0.5rem;
+      margin: 0 0 3rem 0.5rem;
 
       color: #308BC5;
       font-size: 1.2rem;
