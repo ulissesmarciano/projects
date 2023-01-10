@@ -4,7 +4,7 @@ import { Container, InfoContainer } from './styles'
 
 const RepoPageItem = ({ to, title, description, language }) => {
   return (
-    <Link to={to}>
+    <a href={to} target='blank'>
       <Container>
           <InfoContainer>
             <div>
@@ -15,11 +15,8 @@ const RepoPageItem = ({ to, title, description, language }) => {
               <li>{language}</li>
             </ul>
           </InfoContainer>
-          <div>
-            Public
-          </div>
       </Container>
-    </Link>
+    </a>
   )
 }
 
