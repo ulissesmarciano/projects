@@ -46,6 +46,7 @@ export const Container = styled.div`
       color: #AAA;
       font-weight: 500;
       margin: 0 0 0.5rem 0.5rem;
+      word-break: break-all;
     }
   }
 

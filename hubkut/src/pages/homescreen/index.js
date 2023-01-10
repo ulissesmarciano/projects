@@ -15,6 +15,9 @@ const PerfilImage = 'https://avatars.githubusercontent.com/u/104742158?s=400&u=b
 
 const HomeScreen = () => {
   const [user, setUser] = useState()
+  const [repos, setRepos] = useState([])
+  const [starred, setStarred] = useState([])
+  console.log(user)
 
   const getUsername = useParams();
   const username = getUsername.user
@@ -23,8 +26,21 @@ const HomeScreen = () => {
   const getUser = async (username) => {
     const details = await getUserData(username)
     setUser(details.data)
+    //console.log(details.data)
+  }
+
+  const getRepos = async (username) => {
+    const details = await getReposData(username)
+    setRepos(details.data)
+    //console.log(details.data)
+  }
+
+  const getStarred = async (username) => {
+    const details = await getStarredData(username)
+    setStarred(details.data)
     console.log(details.data)
   }
+
 
   const getUserData = async (username) => {
     const res = await axios.get(`https://api.github.com/users/${username}`)
@@ -33,8 +49,20 @@ const HomeScreen = () => {
     //console.log(res)
   }
 
+  const getReposData = async (username) => {
+    const res = await axios.get(`https://api.github.com/users/${username}/repos`)
+    return res
+  }
+
+  const getStarredData = async (username) => {
+    const res = await axios.get(`https://api.github.com/users/${username}/starred`)
+    return res
+  }
+
   useEffect(() => {
     getUser(username)
+    getRepos(username)
+    getStarred(username)
   },[])
   
   return (<>
@@ -54,11 +82,15 @@ const HomeScreen = () => {
     />
     <PortableContainer>
       <Greetings 
-      name="Ulisses"
-      toRepo="/repositories"
-      toStarred="/starreds"
-      toFollowers="/followers"
-      toFollowing="/following"
+      name={user?.name}
+      toRepo={`/repositories/${user?.login}`}
+      repoNum={repos.length}
+      toStarred={`/starreds/${user?.name}`}
+      starredNum={starred.length}
+      toFollowers={`/followers/${user?.name}`}
+      followersNum={user?.followers}
+      toFollowing={`/following/${user?.name}`}
+      followingNum={user?.following}
       />
       <ToDoSection/>
       <LastRepoSection

@@ -10,7 +10,7 @@ const ItemRepo = ({urlRepo, nameRepo, href}) => {
       <TitleContainer>
         <div>
         <img src={RepoIcon}  alt="ícone de repositório"/>
-          <a href={href}>
+          <a href={href} target="blank">
             <h3>{urlRepo}</h3>
           </a>
         </div>

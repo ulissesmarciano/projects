@@ -29,19 +29,19 @@ function App() {
                     <Header/>
                     <PerfilScreen/>
                 </>}/>
-                <Route path="/following" element={<>
+                <Route path="/following/:user" element={<>
                     <Header/>
                     <FollowingScreen/>
                 </>} />
-                <Route path="/followers" element={<>
+                <Route path="/followers/:user" element={<>
                     <Header/>
                     <FollowersScreen/>
                 </>} />
-                <Route path="/starreds" element={<>
+                <Route path="/starreds/:user" element={<>
                     <Header/>
                     <StarredScreen/>
                 </>} />
-                <Route path="repositories" element={<>
+                <Route path="/repositories/:user" element={<>
                     <Header/>
                     <RepositorieScreen/>
                 </>} />
