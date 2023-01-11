@@ -23,8 +23,6 @@ export const InfoContainer = styled.div`
   height: 6rem;
 
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
 `
 
@@ -40,33 +38,5 @@ export const TitleContainer = styled.div`
     font-size: 1rem;
   }
 
-  p {
-    color: #a0a0a0;
-    font-size: 0.8rem;
-  }
 `
 
-export const EmployContainer = styled.div`
-
-  display: flex;
-  justify-content: flex-start;
-
-  div{
-    margin-bottom: 0.2rem;
-    margin-right: 1rem;
-    display: flex;
-    align-items: center;
-
-    img{
-      height: 1.2rem;
-    }
-
-    p{
-      margin-left: 0.2rem;
-
-      color: #999;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-  }
-`

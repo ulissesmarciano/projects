@@ -3,7 +3,6 @@ import HubkutIcon from '../../assets/icons/hubkut-icon.png'
 import LinkItem from '../LinkItem'
 import Sidebar from '../Sidebar'
 import SideBarButton from '../SidebarButton'
-import SearchForm from '../SearchForm'
 
 import {Wrapper, Container, IconContainer, SidebarButtonContainer, MenuWrapper, LinksContainer, SearchContainer } from './styles'
 
@@ -30,7 +29,6 @@ const Header = () => {
             </LinksContainer>
             <SearchContainer>
               <LinkItem title="Sair" href="/" variant="primary" />
-              <SearchForm variant="primary"/>
             </SearchContainer>
           </MenuWrapper>
       </Container>

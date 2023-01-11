@@ -13,7 +13,7 @@ export const Container = styled.div`
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    //justify-content: center;
 
     ul {
       list-style: none;

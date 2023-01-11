@@ -3,10 +3,13 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Container, RepositorieContainer } from './styles'
 
+import Header from '../../components/Header'
 import RepoPageItem from '../../components/RepoPageItem'
 
 
+
 const RepositorieScreen = () => {
+  const [loading, setLoading] = useState(true)
   const [repos, setRepos] = useState()
   const userParams = useParams()
   const username = userParams.user
@@ -21,6 +24,7 @@ const RepositorieScreen = () => {
   const getRepos = async (username) => {
     const details = await getReposData(username)
     setRepos(details.data)
+    setLoading()
   }
 
   //=========================================
@@ -31,26 +35,9 @@ const RepositorieScreen = () => {
 
   //console.log(repos)
 
-  return (
-    <Container>
-      <div className='backLink'>
-        <Link to={`/home/${username}`} >voltar</Link>
-      </div>
-      <RepositorieContainer>
-        {repos?.map((data) => (
-          <li>
-            <RepoPageItem 
-            to={`https://github.com/${username}/${data.name}`}
-            title={data.name}
-            description={data.description}
-            language={data.language}
-            />
-          </li>
-        ))}
-        
-      </RepositorieContainer>
-    </Container>
-  )
+  return (<>
+    
+  </>)
 }
 
 export default RepositorieScreen

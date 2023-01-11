@@ -80,7 +80,7 @@ export const InfoContainer = styled.div`
 
 export const ItemCountContainer = styled.div`
   display: flex;
-  align-items: center;
+  //align-items: center;
 
   img{
     height: 1rem;

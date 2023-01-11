@@ -1,25 +1,53 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { Container, RepositorieContainer } from './styles'
+import axios from 'axios'
 
+import Header from '../../components/Header'
 import RepoPageItem from '../../components/RepoPageItem'
 
 
 const StarredScreen = () => {
+  const [starred, setStarred] = useState([])
+
+  const userParams = useParams()
+  const username = userParams.user
+
+
+  const getStarredData = async (username) => {
+    const res = await axios.get(`https://api.github.com/users/${username}/starred`)
+    return res
+  }
+
+
+  const getStarred = async (username) => {
+    const details = await getStarredData(username)
+    setStarred(details.data)
+  }
+
+  useEffect(() => {
+    getStarred(username)
+  },[])
+
+  //console.log(starred)
+
   return (
     <Container>
+      <Header/>
       <div className='backLink'>
-        <Link to='/home' >voltar</Link>
+        <Link to={`/home/${username}`} >voltar</Link>
       </div>
       <RepositorieContainer>
-        <li>
-          <RepoPageItem 
-          to=''
-          title='decolatech3-dio-curso-introducao-ao-javascript'
-          description='Repositório sobre o curso de introdução ao JavaScript'
-          language='JavaScript'
-          />
-        </li>
+        {starred.map((data, index) => (
+          <li key={index}>
+            <RepoPageItem 
+              to={`https://github.com/${data.owner.login}/${data.name}`}
+              title={data.name}
+              description={data.description}
+              language={data.language}
+            />
+          </li>
+        ))}
       </RepositorieContainer>
     </Container>
   )

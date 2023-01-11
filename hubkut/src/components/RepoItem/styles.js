@@ -45,28 +45,3 @@ export const TitleContainer = styled.div`
 
 `
 
-export const StarContainer = styled.div`
-  display: none;
-
-  @media (min-width: 376px){
-    width: 5rem;
-    margin: 0.5rem;
-    padding: 0 0.5rem;
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  
-    border-radius: 8px;
-    background-color: #6F92BB;
-  
-    img{
-        height: 1rem;
-        margin-right: 0.1rem;
-    }
-  
-    p {
-      color: #fff;
-    }
-  }
-`
