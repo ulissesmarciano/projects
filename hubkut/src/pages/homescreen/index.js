@@ -97,7 +97,7 @@ const HomeScreen = () => {
     {
       loading ? (
       <Loader/>
-      ):(<><Header/>
+      ):(<><Header headerHref={username}/>
       <FullContainer>
         <PerfilSection
           src={user?.avatar_url}

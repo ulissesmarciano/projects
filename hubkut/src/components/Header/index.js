@@ -6,7 +6,7 @@ import SideBarButton from '../SidebarButton'
 
 import {Wrapper, Container, IconContainer, SidebarButtonContainer, MenuWrapper, LinksContainer, SearchContainer } from './styles'
 
-const Header = () => {
+const Header = ({headerHref}) => {
   const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => setSidebar(!sidebar)
   return (
@@ -21,7 +21,7 @@ const Header = () => {
           </SidebarButtonContainer>
           <MenuWrapper>
             <LinksContainer>
-              <LinkItem title="Início" href="/home" />
+              <LinkItem title="Início" href={headerHref} />
               <LinkItem title="Pull Requests" href="https://github.com/pulls" variant="primary" target='qqqqqqq21blank' />
               <LinkItem title="Issues" href="https://github.com/issues" variant="primary" target='blank' />
               <LinkItem title="Marketplace" href="https://github.com/marketplace" variant="primary" target='blank' />

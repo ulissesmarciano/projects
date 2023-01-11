@@ -4,10 +4,12 @@ import { Container, RepositorieContainer } from './styles'
 import axios from 'axios'
 
 import Header from '../../components/Header'
+import Loader from '../../components/Loader'
 import RepoPageItem from '../../components/RepoPageItem'
 
 
 const StarredScreen = () => {
+  const [loading, setLoading] = useState(true)
   const [starred, setStarred] = useState([])
 
   const userParams = useParams()
@@ -23,34 +25,37 @@ const StarredScreen = () => {
   const getStarred = async (username) => {
     const details = await getStarredData(username)
     setStarred(details.data)
+    setLoading()
   }
 
   useEffect(() => {
     getStarred(username)
   },[])
 
-  //console.log(starred)
-
-  return (
-    <Container>
-      <Header/>
-      <div className='backLink'>
-        <Link to={`/home/${username}`} >voltar</Link>
-      </div>
-      <RepositorieContainer>
-        {starred.map((data, index) => (
-          <li key={index}>
-            <RepoPageItem 
-              to={`https://github.com/${data.owner.login}/${data.name}`}
-              title={data.name}
-              description={data.description}
-              language={data.language}
-            />
-          </li>
-        ))}
-      </RepositorieContainer>
-    </Container>
-  )
+  return (<>
+  {loading ? (
+    <Loader />
+  ):(
+  <Container>
+    <Header/>
+    <div className='backLink'>
+      <Link to={`/home/${username}`} >voltar</Link>
+    </div>
+    <RepositorieContainer>
+      {starred.map((data, index) => (
+        <li key={index}>
+          <RepoPageItem 
+            to={`https://github.com/${data.owner.login}/${data.name}`}
+            title={data.name}
+            description={data.description}
+            language={data.language}
+          />
+        </li>
+      ))}
+    </RepositorieContainer>
+  </Container>
+  )}
+  </>)
 }
 
 export default StarredScreen

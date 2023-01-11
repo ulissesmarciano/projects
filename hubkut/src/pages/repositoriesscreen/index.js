@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Container, RepositorieContainer } from './styles'
 
 import Header from '../../components/Header'
+import Loader from '../../components/Loader'
 import RepoPageItem from '../../components/RepoPageItem'
 
 
@@ -19,15 +20,12 @@ const RepositorieScreen = () => {
     return res
   }
 
-  //=========================================
-
   const getRepos = async (username) => {
     const details = await getReposData(username)
     setRepos(details.data)
     setLoading()
   }
 
-  //=========================================
 
   useEffect(() => {
     getRepos(username)
@@ -36,7 +34,25 @@ const RepositorieScreen = () => {
   //console.log(repos)
 
   return (<>
-    
+    {loading ? (
+      <Loader/>
+    ):(
+    <Container>
+      <div className='backLink'>
+        <Link to='/home' >voltar</Link>
+      </div>
+      <RepositorieContainer>
+        <li>
+          <RepoPageItem 
+          to=''
+          title='decolatech3-dio-curso-introducao-ao-javascript'
+          description='Repositório sobre o curso de introdução ao JavaScript'
+          language='JavaScript'
+          />
+        </li>
+      </RepositorieContainer>
+    </Container>
+    )}
   </>)
 }
 
