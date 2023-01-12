@@ -11,7 +11,6 @@ import FollowersSection from './section/followersSection'
 import ItemRepo from '../../components/RepoItem'
 import Loader from '../../components/Loader'
 
-const PerfilImage = 'https://avatars.githubusercontent.com/u/104742158?s=400&u=b793765b9ab0c8f5bec5e2c7580678cac6bce511&v=4'
 
 const PerfilScreen = () => {
   const [loading, setLoading] = useState(true)
@@ -82,7 +81,7 @@ const PerfilScreen = () => {
       <Loader />
     ):(
     <>
-      <Header/>
+      <Header headerHref={`/home/${username}`}/>
       <FullContainer>
         <PerfilSection
           src={user?.avatar_url}

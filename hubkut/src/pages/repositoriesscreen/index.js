@@ -31,28 +31,29 @@ const RepositorieScreen = () => {
     getRepos(username)
   },[])
 
-  //console.log(repos)
+  console.log(repos)
 
   return (<>
     {loading ? (
       <Loader/>
-    ):(
+    ):(<>
+    <Header headerHref={`/home/${username}`}/>
     <Container>
       <div className='backLink'>
-        <Link to='/home' >voltar</Link>
+        <Link to={`/home/${username}`} >voltar</Link>
       </div>
       <RepositorieContainer>
-        <li>
+        {repos.map((data) => (<li>
           <RepoPageItem 
-          to=''
-          title='decolatech3-dio-curso-introducao-ao-javascript'
-          description='Repositório sobre o curso de introdução ao JavaScript'
-          language='JavaScript'
+          to={data.html_url}
+          title={data.name}
+          description={data.description}
+          language={data.language}
           />
-        </li>
+        </li>))}
       </RepositorieContainer>
     </Container>
-    )}
+    </>)}
   </>)
 }
 

@@ -14,7 +14,6 @@ import FollowingSection from './section/followingSection'
 import FollowersSection from './section/followersSection'
 import ItemRepo from '../../components/RepoItem'
 
-const PerfilImage = 'https://avatars.githubusercontent.com/u/104742158?s=400&u=b793765b9ab0c8f5bec5e2c7580678cac6bce511&v=4'
 
 const HomeScreen = () => {
   const [loading, setLoading] = useState(true)

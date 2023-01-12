@@ -35,9 +35,9 @@ const FollowersScreen = () => {
   return (<>
     {loading ? (
       <Loader />
-    ):(
+    ):(<>
+    <Header headerHref={`/home/${username}`}/>
     <Container>
-      <Header />
       <div className='backLink'>
         <Link to={`/home/${username}`} >voltar</Link>
       </div>
@@ -54,7 +54,7 @@ const FollowersScreen = () => {
         ))}
       </RepositorieContainer>
     </Container>
-    )}
+    </>)}
   </>
     
   )

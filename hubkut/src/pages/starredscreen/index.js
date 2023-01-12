@@ -35,9 +35,9 @@ const StarredScreen = () => {
   return (<>
   {loading ? (
     <Loader />
-  ):(
+  ):(<>
+  <Header/>
   <Container>
-    <Header/>
     <div className='backLink'>
       <Link to={`/home/${username}`} >voltar</Link>
     </div>
@@ -54,7 +54,7 @@ const StarredScreen = () => {
       ))}
     </RepositorieContainer>
   </Container>
-  )}
+  </>)}
   </>)
 }
 

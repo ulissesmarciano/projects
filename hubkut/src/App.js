@@ -11,7 +11,6 @@ import FollowersScreen from "./pages/followwerscreen";
 import StarredScreen from "./pages/starredscreen";
 import RepositorieScreen from "./pages/repositoriesscreen";
 import PerfilScreen from "./pages/perfilscreen";
-import Header from './components/Header';
 
 
 function App() {

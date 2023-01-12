@@ -19,8 +19,10 @@ const Login = () => {
         </PhraseContainer>
         <UserFormContainer>
           Usuário:
-          <UserForm/>
-          <UserButton to="/home" />
+          <UserForm
+            onChange={(e) => setGetUser(e.target.value)}
+          />
+          <UserButton to={`/home/${getUser}`}  />
         </UserFormContainer>
       </IconContainer>
       <LoginContainer>
@@ -34,7 +36,7 @@ const Login = () => {
             />
           </div>
           <span className='buttonSpace'>
-            <UserButton to={`/home/${getUser}`} />
+            <UserButton to={`/home/${getUser}`}  />
           </span>
         </UserLoginContainer>
         <UserLogonContainer>
