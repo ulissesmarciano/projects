@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   margin: 1rem auto 0;
   padding: 1.5rem 1rem;
-  width: 95vw;
+  width: 100%;
+  
 
 
   background-color: #fff;

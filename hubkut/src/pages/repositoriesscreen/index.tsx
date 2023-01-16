@@ -38,7 +38,7 @@ const RepositorieScreen = () => {
     {loading ? (
       <Loader/>
     ):(<>
-    <Header headerHref={`/home/${username}`}/>
+    <Header/>
     <Container>
       <div className='backLink'>
         <Link to={`/home/${username}`} >voltar</Link>

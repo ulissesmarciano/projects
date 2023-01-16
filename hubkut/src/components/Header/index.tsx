@@ -5,9 +5,8 @@ import Sidebar from '../Sidebar'
 import SideBarButton from '../SidebarButton'
 
 import {Wrapper, Container, IconContainer, SidebarButtonContainer, MenuWrapper, LinksContainer, SearchContainer } from './styles'
-import { IHeader } from './types'
 
-const Header = ({headerHref}:IHeader) => {
+const Header = () => {
   const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => setSidebar(!sidebar)
   return (
@@ -22,7 +21,6 @@ const Header = ({headerHref}:IHeader) => {
           </SidebarButtonContainer>
           <MenuWrapper>
             <LinksContainer>
-              <LinkItem title="Início" href={headerHref} />
               <LinkItem title="Pull Requests" href="https://github.com/pulls" variant="primary" target='blank' />
               <LinkItem title="Issues" href="https://github.com/issues" variant="primary" target='blank' />
               <LinkItem title="Marketplace" href="https://github.com/marketplace" variant="primary" target='blank' />

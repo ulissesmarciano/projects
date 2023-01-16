@@ -93,11 +93,12 @@ const HomeScreen = () => {
     getFollowing(username)
   },[])
 
+
   return (<>
     {
       loading ? (
       <Loader/>
-      ):(<><Header headerHref={username}/>
+      ):(<><Header/>
       <FullContainer>
         <PerfilSection
           src={user?.avatar_url}

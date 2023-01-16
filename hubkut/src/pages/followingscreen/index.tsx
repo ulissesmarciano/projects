@@ -38,7 +38,7 @@ const FollowingScreen = () => {
     {loading ? (
       <Loader />
     ):(<>
-    <Header headerHref={`/home/${userParams}`}/>
+    <Header />
     <Container>
       <div className='backLink'>
         <Link to={`/home/${username}`} >voltar</Link>

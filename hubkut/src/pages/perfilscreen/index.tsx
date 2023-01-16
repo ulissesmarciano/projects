@@ -80,7 +80,7 @@ const PerfilScreen = () => {
       <Loader />
     ):(
     <>
-      <Header headerHref={`/home/${username}`}/>
+      <Header/>
       <FullContainer>
         <PerfilSection
           src={user?.avatar_url}
