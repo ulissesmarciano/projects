@@ -107,7 +107,7 @@ const PerfilScreen = () => {
         <div>
           <FollowingSection 
             numOfFollwing={user?.following}
-            followingHref={''}
+            followingHref={user.login}
             perfilUser={following.map((data, index) => (
               <li
               key={index}
@@ -131,7 +131,7 @@ const PerfilScreen = () => {
           />
           <FollowersSection 
             numOfFollowers={user?.followers}
-            followersHref={''}
+            followersHref={user.login}
             itemRepo={followers.map((data, index) => (
               <li
               key={index}
