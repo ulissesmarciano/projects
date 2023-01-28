@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './styles/theme';
-import ToggleButton from './components/Toggle';
+
+import { Container } from './styles';
+import { GlobalStyles } from './styles/global';
+import LoginScreen from './pages/loginscreen';
+import Header from './components/Header';
 
 function App() {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
+  
 
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
@@ -12,8 +17,16 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <div>olá</div>
-      <ToggleButton/>
+      <GlobalStyles />
+      <Container>
+        <Header 
+          variant={theme === 'dark' ? 'primary' : !'primary'} 
+          closeIconVariant={theme === 'dark' ? 'primary' : !'primary'} 
+          onChange={themeToggler}
+
+          />
+        <LoginScreen/>
+      </Container>
     </ThemeProvider>
   );
 }

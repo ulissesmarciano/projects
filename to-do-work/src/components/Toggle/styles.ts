@@ -1,81 +1,43 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  touch-action: pan-x;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-tap-highlight-color: transparent;
+export const Container = styled.label`
+    width: 3rem;
+    height: 1.5rem;
+    padding: 0.2rem;
+    position: relative;
+    
+    border-radius: 1rem;
+    background: #4e4e4e;
+    cursor: pointer;
 
-    .wrg-toggle-input {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    input {
+      display: none;
     }
 
-    .wrg-toggle-check, .wrg-toggle-uncheck {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 0;
-  bottom: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  line-height: 0;
-  opacity: 0;
-  transition: opacity .25s ease;
-}
-.wrg-toggle-check {
-  left: 8px;
-}
-.wrg-toggle-uncheck {
-  opacity: 1;
-  right: 10px;
-}
+    span {
+      position: absolute;
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 1rem;
+      background: #fff;
+      left: 8%;
 
-.wrg-toggle-uncheck span, 
-.wrg-toggle-check span {
-  align-items: center;
-  display: flex;
-  height: 10px;
-  justify-content: center;
-  position: relative;
-  width: 10px;
-}
+      box-shadow: 2px 2px 4px black;
+      transition: 0.1s;
+    }
 
-.wrg-toggle-container{
-  width: 50px;
-  height: 24px;
-  padding: 0;
-  border-radius: 30px;
-  background-color: #4d4d4d;
-  transition: all .2s ease;
-}
+    input:checked + span {
+      left: 52%
+    }
 
-.wrg-toggle-circle{
-  transition: all .5s cubic-bezier(.23,1,.32,1) 0ms;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 22px;
-  height: 22px;
-  border: 1px solid #4d4d4d;
-  border-radius: 50%;
-  background-color: #fafafa;
-  box-sizing: border-box;
-  transition: all .25s ease;
-}
+    p{
+      font-size: 0.8rem;
+      margin-right: 3px;
+      margin-bottom: 3px;
+    }
 `
