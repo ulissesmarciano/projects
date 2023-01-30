@@ -6,13 +6,12 @@ import SidebarButton from '../SidebarButton'
 import { IHeader } from './types'
 import Sidebar from '../Sidebar'
 
-const Header = ({variant, onChange, closeIconVariant}:IHeader) => {
-
+const Header = ({variant, onChange, closeIconVariant, headerVariant}:IHeader) => {
   const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => setSidebar(!sidebar)
 
   return (
-    <Container>
+    <Container variant={headerVariant}>
       <ImageContainer>
         <img src={Logo} alt="Logotipo do Aplicativo" />
       </ImageContainer>

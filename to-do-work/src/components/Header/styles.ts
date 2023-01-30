@@ -1,13 +1,19 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
+import { IHeaderStyles } from './types'
 
-export const Container = styled.div`
-  color: ${props => props.theme.fontColor};
-
+export const Container = styled.div<IHeaderStyles>`
   padding: 0.5rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  background-color: #252525;
+  border-bottom: 2px solid #c2c2c2;
+
+  ${({variant}) => variant !== 'primary' && css`
+    background-color: #fff;
+  `}
 `
 
 export const ImageContainer = styled.div`

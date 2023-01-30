@@ -9,21 +9,21 @@ import Header from './components/Header';
 
 function App() {
   const [theme, setTheme] = useState('dark')
-  
+   
 
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
   }
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider  theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
       <Container>
-        <Header 
+        <Header
           variant={theme === 'dark' ? 'primary' : !'primary'} 
-          closeIconVariant={theme === 'dark' ? 'primary' : !'primary'} 
+          closeIconVariant={theme === 'dark' ? 'primary' : !'primary'}
+          headerVariant={theme === 'dark' ? 'primary' : ! 'primary'} 
           onChange={themeToggler}
-
           />
         <LoginScreen/>
       </Container>

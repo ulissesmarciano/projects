@@ -44,14 +44,15 @@ export const MenuContainer = styled.div`
   justify-content: space-around;
 
   .line {
-    width: 100%;
-    border-top: 3px solid #252525;
-    border-bottom: 3px solid #fff;
+    width: 90%;
+    border-top: 3px solid #25252590;
+    border-bottom: 3px solid #ffffff90;
   }
 `
 
 export const ToggleContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   flex: 1;
 `
