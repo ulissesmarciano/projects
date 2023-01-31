@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Border } from './styles'
+import { IButton } from './types'
 
-const Button = () => {
+const Button = ({to, variant, title}:IButton) => {
   return (
-    <Link to='/logon'>
-      <Border>
-        <Container>
-          Comece Agora
+    <Link to={to}>
+      <Border variant={variant}>
+        <Container variant={variant}>
+          {title}
         </Container>
       </Border>
     </Link>

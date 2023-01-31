@@ -14,7 +14,7 @@ const GreetingScreen = ({greetingScreenVariant, scrollbarVariant, projectItemVar
         <p>Crie tarefas e organize por prioridade para que seu dia seja mais organizado. Conte com nossas melhorias para uma ótima experiência em nossa plataforma.</p>
       </GreetingContainer>
       <ButtonContainer>
-        <Button/>
+        <Button to='/logon' title='começar agora'/>
       </ButtonContainer>
       <ProjectDescriptionContainer>
         <h4>Escolha seu organlizador</h4>

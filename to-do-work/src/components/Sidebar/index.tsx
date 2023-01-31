@@ -1,10 +1,12 @@
 import React from 'react'
+import Button from '../Button'
 import CloseButton from '../Closebutton'
 import ToggleButton from '../Toggle'
-import { Container, HeadContainer, MenuContainer, ToggleContainer } from './styles'
+import { Container, HeadContainer, MenuContainer, ToggleContainer, ButtonContainer } from './styles'
 import { ISidebar } from './types'
+import { MemoryRouter as Router } from 'react-router-dom'
 
-const Sidebar = ({active, onChange, closeIconVariant}:ISidebar) => {
+const Sidebar = ({active, onChange, closeIconVariant }:ISidebar) => {
   const closeSidebar = () => {
     active(false)
   }
@@ -20,6 +22,12 @@ const Sidebar = ({active, onChange, closeIconVariant}:ISidebar) => {
         <div className='line'/>
         Menu 3
       </MenuContainer>
+      <ButtonContainer>
+        <Router>
+            <Button to='/logon' variant='secondary' title='cadastrar'/>
+            <Button to='/logon' variant='third' title='entrar'/>
+        </Router>
+      </ButtonContainer>
       <ToggleContainer>
         <ToggleButton onChange={onChange}/>
       </ToggleContainer>

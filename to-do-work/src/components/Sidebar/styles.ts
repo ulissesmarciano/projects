@@ -52,6 +52,14 @@ export const MenuContainer = styled.div`
   }
 `
 
+export const ButtonContainer = styled.div`
+  padding: 2rem;
+  gap: 2rem;
+  
+  display: flex;
+  justify-content: space-around;
+`
+
 export const ToggleContainer = styled.div`
   display: flex;
   justify-content: center;
