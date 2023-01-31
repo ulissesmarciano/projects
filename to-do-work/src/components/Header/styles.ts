@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components'
 import { IHeaderStyles } from './types'
 
 export const Container = styled.div<IHeaderStyles>`
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 
   display: flex;
   justify-content: space-between;

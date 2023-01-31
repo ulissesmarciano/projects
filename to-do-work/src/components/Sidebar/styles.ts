@@ -3,6 +3,8 @@ import { ISidebarStyled } from './types'
 
 export const Container = styled.div<ISidebarStyled>`
   background-color: ${props => props.theme.body};
+  color: ${props => props.theme.fontColor};
+  
   position: absolute;
   padding: 0.8rem 0.3rem;
   top: 0;
