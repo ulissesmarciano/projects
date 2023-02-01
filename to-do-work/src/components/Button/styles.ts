@@ -24,6 +24,7 @@ export const Container = styled.button<IButtonStyles>`
     border: 2px solid #88008c;
 
     font-weight: 400;
+    color: ${props => props.theme.fontColor};
 
     &:hover{
     box-shadow: none;

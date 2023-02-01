@@ -6,7 +6,7 @@ import SidebarButton from '../SidebarButton'
 import { IHeader } from './types'
 import Sidebar from '../Sidebar'
 
-const Header = ({variant, onChange, closeIconVariant, headerVariant}:IHeader) => {
+const Header = ({variant, onChange, closeIconVariant, headerVariant, toLogon }:IHeader) => {
   const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => setSidebar(!sidebar)
 
@@ -21,6 +21,7 @@ const Header = ({variant, onChange, closeIconVariant, headerVariant}:IHeader) =>
         active={setSidebar}
         onChange={onChange}
         closeIconVariant={closeIconVariant}
+        toLogon={toLogon}
         /> }
       </div>
     </Container>

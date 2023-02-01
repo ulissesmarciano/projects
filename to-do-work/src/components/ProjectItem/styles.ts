@@ -8,6 +8,7 @@ export const Container = styled.div<IProjectItemStyles>`
 
   display: flex;
   flex-direction: column;
+  border-radius: 1rem;
 
   h3 {
     font-size: 2.5rem;

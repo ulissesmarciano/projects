@@ -4,9 +4,10 @@ import CloseButton from '../Closebutton'
 import ToggleButton from '../Toggle'
 import { Container, HeadContainer, MenuContainer, ToggleContainer, ButtonContainer } from './styles'
 import { ISidebar } from './types'
-import { MemoryRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-const Sidebar = ({active, onChange, closeIconVariant }:ISidebar) => {
+
+const Sidebar = ({active, onChange, closeIconVariant, toLogon }:ISidebar) => {
   const closeSidebar = () => {
     active(false)
   }
@@ -24,8 +25,8 @@ const Sidebar = ({active, onChange, closeIconVariant }:ISidebar) => {
       </MenuContainer>
       <ButtonContainer>
         <Router>
-            <Button to='/logon' variant='secondary' title='cadastrar'/>
-            <Button to='/logon' variant='third' title='entrar'/>
+            <Button to={toLogon} variant='secondary' title='cadastrar' onClick={closeSidebar} />
+            <Button to='/logon' variant='third' title='entrar' onClick={closeSidebar}/>
         </Router>
       </ButtonContainer>
       <ToggleContainer>

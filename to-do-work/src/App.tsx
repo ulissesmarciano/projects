@@ -12,7 +12,7 @@ import GreetingScreen from './pages/greetingscreen';
 import LogonScreen from './pages/logonscreen';
 
 function App() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
 
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
@@ -26,6 +26,7 @@ function App() {
         closeIconVariant={theme === 'dark' ? 'primary' : !'primary'}
         headerVariant={theme === 'dark' ? 'primary' : ! 'primary'} 
         onChange={themeToggler}
+        toLogon="logon"
       />
       <GlobalStyles />
       <Router>

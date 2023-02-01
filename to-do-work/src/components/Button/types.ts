@@ -1,7 +1,8 @@
 export interface IButton {
   title: string,
-  to: string,
+  to: any,
   variant?: string | boolean,
+  onClick?: () => void,
 }
 
 export interface IButtonStyles {

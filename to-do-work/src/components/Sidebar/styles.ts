@@ -48,7 +48,7 @@ export const MenuContainer = styled.div`
   .line {
     width: 90%;
     border-top: 3px solid #25252590;
-    border-bottom: 3px solid #ffffff90;
+    border-bottom: 3px solid #ebebeb;
   }
 `
 

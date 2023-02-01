@@ -3,6 +3,7 @@ export interface IHeader {
   onChange: () => void,
   closeIconVariant?: boolean | string,
   headerVariant?: boolean | string,
+  toLogon: string,
 }
 
 export interface IHeaderStyles {
