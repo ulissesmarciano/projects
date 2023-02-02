@@ -16,8 +16,31 @@ export const Container = styled.div<IHeaderStyles>`
   `}
 `
 
-export const ImageContainer = styled.div`
+export const LogoContainer = styled.div`
   img{
     height: 2.5rem;
   }
+`
+
+export const SidebarContainer = styled.div`
+  @media(min-width: 1025px){
+    display: none;
+  }
+`
+
+export const LinkContainer = styled.div`
+  display: none;
+
+  @media(min-width: 1025px){
+    width: 60%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+`
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `

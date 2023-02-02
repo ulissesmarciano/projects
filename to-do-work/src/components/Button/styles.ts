@@ -33,7 +33,19 @@ export const Container = styled.button<IButtonStyles>`
 
   ${({variant}) => variant === 'third' && css`
 
-    background: transparent #88008c;
+    background: #88008c;
+
+    font-weight: 400;
+
+    &:hover{
+    box-shadow: none;
+    }
+
+  `}
+
+  ${({variant}) => variant === 'forth' && css`
+    padding: 0.2rem 1.5rem;
+    background: #858585;
 
     font-weight: 400;
 
@@ -53,6 +65,10 @@ export const Border = styled.div<IButtonStyles>`
   `}
 
   ${({variant}) => variant === 'third' && css`
+    border: none;
+  `}
+
+  ${({variant}) => variant === 'forth' && css`
     border: none;
   `}
 `
