@@ -5,10 +5,10 @@ import { Container } from './styles';
 const ToggleButton = ({onChange}:IToggle) => {
   return(
     <Container onChange={onChange}>
-      <p>🌞</p>
+      <p>🌜</p>
       <input type="checkbox"/>
       <span></span>
-      <p>🌜</p>
+      <p>🌞</p>
     </Container>
     // <Container className={className} onChange={onChange}>
     //   <div className="wrg-toggle-container">

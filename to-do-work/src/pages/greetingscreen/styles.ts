@@ -19,6 +19,11 @@ export const Container = styled.div<IGreetingScreenStyles>`
       background-image: linear-gradient( #ffffff80, #ffffff 30%), url(${banner});
       background-color: red;
     `}
+
+    .dimensionContainer{
+      max-width: 76rem;
+      margin: auto;
+    }
 `
 
 
@@ -126,7 +131,7 @@ export const ProjectsContainer = styled.div<IGreetingScreenStyles>`
   background-color: ${props => props.theme.body};
   gap: 2rem;
   padding: 0 2rem 2rem;
-  
+
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
@@ -152,11 +157,10 @@ export const ProjectsContainer = styled.div<IGreetingScreenStyles>`
     }
   }
 
-  @media (min-width: 1200px){
-      margin: 0 0 0 -2rem;
-      flex-direction: column;
-      align-items: center;
-      overflow-x: hidden;
-      overflow-y: hidden;
+  @media (min-width: 1025px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
+
 `

@@ -10,13 +10,16 @@ const GreetingScreen = ({greetingScreenVariant, scrollbarVariant, projectItemVar
   return (
     <Container variant={backgroundVariant}>
       <StartContainer variant={backgroundVariant}>
+        <div className='dimensionContainer'>
         <GreetingContainer variant={greetingScreenVariant}>
+            
           <h2>Organize seu trabalho</h2>
           <p>Crie tarefas e organize por prioridade para que seu dia seja mais organizado. Conte com nossas melhorias para uma ótima experiência em nossa plataforma.</p>
         </GreetingContainer>
         <ButtonContainer>
           <Button to='/logon' title='começar agora' />
         </ButtonContainer>
+        </div>
       </StartContainer>
       <ProjectDescriptionContainer>
         <h4>Escolha seu organizador</h4>

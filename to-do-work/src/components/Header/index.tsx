@@ -6,6 +6,7 @@ import SidebarButton from '../SidebarButton'
 import { IHeader } from './types'
 import Sidebar from '../Sidebar'
 import Button from '../Button'
+import ToggleButton from '../Toggle'
 
 const Header = ({variant, onChange, closeIconVariant, headerVariant, toLogon }:IHeader) => {
   const [sidebar, setSidebar] = useState(false)
@@ -23,11 +24,12 @@ const Header = ({variant, onChange, closeIconVariant, headerVariant, toLogon }:I
         <span/>
         Menu 3
         <span/>
-        <ButtonContainer>
-          <Button to='logon' title='cadastrar' variant='forth' />
-          <Button to='logon' title='entrar' variant='forth' />
-        </ButtonContainer>
       </LinkContainer>
+        <ButtonContainer>
+          <Button to='logon' title='entrar' variant='forth' />
+          <Button to='logon' title='cadastrar' variant='forth' />
+          <ToggleButton onChange={onChange}/>
+        </ButtonContainer>
       <SidebarContainer>
         <SidebarButton onClick={showSidebar} variant={variant}/>
         {sidebar && <Sidebar 

@@ -32,15 +32,20 @@ export const LinkContainer = styled.div`
   display: none;
 
   @media(min-width: 1025px){
-    width: 60%;
+    width: 100%;
+    gap: 2rem;
     
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 `
 export const ButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: none;
+@media(min-width: 1025px){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
 `
