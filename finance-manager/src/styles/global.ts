@@ -12,4 +12,8 @@ export default createGlobalStyle`
         background-color: #f4e1d3;
         height: 100%;
     }
+    a{
+        text-decoration: none;
+        color: #000;
+    }
 `
